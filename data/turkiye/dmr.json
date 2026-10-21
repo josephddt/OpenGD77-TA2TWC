@@ -1,0 +1,1506 @@
+{
+ "radioid": [
+  {
+   "locator": 286001,
+   "callsign": "YM5KKE",
+   "city": "AKSARAY",
+   "frequency": "439.16250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "2841",
+   "status": "on-air"
+  },
+  {
+   "locator": 286002,
+   "callsign": "YM1KK",
+   "city": "Istanbul",
+   "frequency": "439.22500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286003,
+   "callsign": "YM1KAB",
+   "city": "ISTANBUL",
+   "frequency": "439.23750",
+   "offset": "-7.600",
+   "color_code": 0,
+   "ipsc_network": "BrandMeister",
+   "status": "on-air"
+  },
+  {
+   "locator": 286004,
+   "callsign": "YM1KPL",
+   "city": "Tekirdag",
+   "frequency": "439.41250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BrandMeister",
+   "status": "on-air"
+  },
+  {
+   "locator": 286006,
+   "callsign": "TB7CEA",
+   "city": "Ordualtinordu",
+   "frequency": "432.50000",
+   "offset": "0.000",
+   "color_code": 1,
+   "ipsc_network": "0",
+   "status": "on-air"
+  },
+  {
+   "locator": 286007,
+   "callsign": "YM3KZ",
+   "city": "Mustafakemalpasa Bursa",
+   "frequency": "145.68750",
+   "offset": "-0.600",
+   "color_code": 2,
+   "ipsc_network": "Local",
+   "status": "on-air"
+  },
+  {
+   "locator": 286008,
+   "callsign": "YM6VSM",
+   "city": "SAMSUN",
+   "frequency": "439.27500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "Brandmeister",
+   "status": "on-air"
+  },
+  {
+   "locator": 286009,
+   "callsign": "YM6VSM",
+   "city": "samsun",
+   "frequency": "145.72500",
+   "offset": "-0.600",
+   "color_code": 1,
+   "ipsc_network": "Brandmeister",
+   "status": "on-air"
+  },
+  {
+   "locator": 286010,
+   "callsign": "YM5KA",
+   "city": "Adana",
+   "frequency": "439.15000",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286011,
+   "callsign": "YM5KA",
+   "city": "Adana",
+   "frequency": "439.16250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286012,
+   "callsign": "YM5KA",
+   "city": "Adana",
+   "frequency": "439.25000",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286013,
+   "callsign": "YM5KA",
+   "city": "Adana",
+   "frequency": "145.65000",
+   "offset": "-0.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286014,
+   "callsign": "YM3KBO",
+   "city": "Bursa",
+   "frequency": "145.73750",
+   "offset": "-0.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286015,
+   "callsign": "YM2KKB",
+   "city": "Karabuk",
+   "frequency": "439.17500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286016,
+   "callsign": "YM2KB",
+   "city": "Bolu",
+   "frequency": "439.40000",
+   "offset": "-7.60",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286017,
+   "callsign": "YM5KDA",
+   "city": "Hatay",
+   "frequency": "439.37500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286018,
+   "callsign": "YM2KKO",
+   "city": "Kocaeli",
+   "frequency": "439.16250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286019,
+   "callsign": "YM6VSM",
+   "city": "SAMSUN",
+   "frequency": "145.78750",
+   "offset": "-0.600",
+   "color_code": 1,
+   "ipsc_network": "Brandmeister",
+   "status": "on-air"
+  },
+  {
+   "locator": 286020,
+   "callsign": "YM3KMA",
+   "city": "Manisa",
+   "frequency": "439.17500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286021,
+   "callsign": "YM3KC",
+   "city": "Izmir",
+   "frequency": "439.22500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286022,
+   "callsign": "YM3KC",
+   "city": "Izmir",
+   "frequency": "439.37500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286024,
+   "callsign": "YM2KK",
+   "city": "Istanbul",
+   "frequency": "439.26250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286025,
+   "callsign": "YM2KA",
+   "city": "Cankaya Ankara",
+   "frequency": "439.42500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286027,
+   "callsign": "YM4KU",
+   "city": "Efeler",
+   "frequency": "439.37500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286028,
+   "callsign": "YM4KB",
+   "city": "Denizli",
+   "frequency": "439.16250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM2622",
+   "status": "on-air"
+  },
+  {
+   "locator": 286029,
+   "callsign": "YM2KBL",
+   "city": "Bolu",
+   "frequency": "439.16250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286030,
+   "callsign": "YM2KBS",
+   "city": "Bartin",
+   "frequency": "439.20000",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286031,
+   "callsign": "YM9KVN",
+   "city": "Van",
+   "frequency": "439.37500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286032,
+   "callsign": "YM7KA",
+   "city": "Trabzon",
+   "frequency": "145.76250",
+   "offset": "-0.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286033,
+   "callsign": "YM5KY",
+   "city": "Mersin",
+   "frequency": "145.67500",
+   "offset": "-0.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286034,
+   "callsign": "YM4KSO",
+   "city": "Aydin",
+   "frequency": "439.36250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "dmr",
+   "status": "on-air"
+  },
+  {
+   "locator": 286035,
+   "callsign": "YM5KSI",
+   "city": "Mersin Silifke",
+   "frequency": "439.40000",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286036,
+   "callsign": "YM2KT",
+   "city": "ANKARA",
+   "frequency": "439.40000",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "DMR",
+   "status": "on-air"
+  },
+  {
+   "locator": 286037,
+   "callsign": "YM5KY",
+   "city": "Mersin",
+   "frequency": "439.17500",
+   "offset": "-0.7600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286038,
+   "callsign": "YM1KLB",
+   "city": "Kırklareli",
+   "frequency": "431.67500",
+   "offset": "-0.7600",
+   "color_code": 1,
+   "ipsc_network": "Bm",
+   "status": "on-air"
+  },
+  {
+   "locator": 286039,
+   "callsign": "YM3KBC",
+   "city": "Canakkale",
+   "frequency": "439.16250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286040,
+   "callsign": "YM1VKR",
+   "city": "Kirklareli",
+   "frequency": "439.37500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "DMR",
+   "status": "on-air"
+  },
+  {
+   "locator": 286041,
+   "callsign": "YM3VAS",
+   "city": "Salihli",
+   "frequency": "439.17500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "Dmr",
+   "status": "on-air"
+  },
+  {
+   "locator": 286042,
+   "callsign": "YM3VFD",
+   "city": "izmir",
+   "frequency": "439.21250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "DMR",
+   "status": "on-air"
+  },
+  {
+   "locator": 286043,
+   "callsign": "YM4KFE",
+   "city": "Mugla",
+   "frequency": "439.37500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286045,
+   "callsign": "YM3KBL",
+   "city": "Balikesir",
+   "frequency": "439.31250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286046,
+   "callsign": "YM5KA",
+   "city": "Adana",
+   "frequency": "145.72500",
+   "offset": "-0.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286047,
+   "callsign": "YM3KD",
+   "city": "Balikesir",
+   "frequency": "439.37500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286049,
+   "callsign": "YM3VFD",
+   "city": "Izmir",
+   "frequency": "439.41250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "DMR",
+   "status": "on-air"
+  },
+  {
+   "locator": 286050,
+   "callsign": "YM5KNV",
+   "city": "Nevsehir Merkez",
+   "frequency": "439.17500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "DMR",
+   "status": "on-air"
+  },
+  {
+   "locator": 286051,
+   "callsign": "TA4AB",
+   "city": "Aydin",
+   "frequency": "439.32500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286052,
+   "callsign": "YM5KAD",
+   "city": "Adana",
+   "frequency": "145.70000",
+   "offset": "-0.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286053,
+   "callsign": "YM6KCO",
+   "city": "Corum",
+   "frequency": "439.37500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "bm",
+   "status": "on-air"
+  },
+  {
+   "locator": 286054,
+   "callsign": "YM7KYS",
+   "city": "Kayseri",
+   "frequency": "439.16250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286055,
+   "callsign": "YM5KAA",
+   "city": "Adana",
+   "frequency": "145.78750",
+   "offset": "-0.600",
+   "color_code": 1,
+   "ipsc_network": "DMR",
+   "status": "on-air"
+  },
+  {
+   "locator": 286056,
+   "callsign": "YM5KAA",
+   "city": "Adana",
+   "frequency": "439.38750",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286057,
+   "callsign": "YM6KTC",
+   "city": "CANKIRI",
+   "frequency": "439.17500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286058,
+   "callsign": "YM3KO",
+   "city": "Manisa",
+   "frequency": "439.40000",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286059,
+   "callsign": "YM4KSO",
+   "city": "Aydin",
+   "frequency": "439.16250",
+   "offset": "-7.6000",
+   "color_code": 1,
+   "ipsc_network": "Dmr",
+   "status": "on-air"
+  },
+  {
+   "locator": 286060,
+   "callsign": "YM2KA",
+   "city": "Ankara Baglum",
+   "frequency": "439.25000",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286061,
+   "callsign": "YM2KRD",
+   "city": "Ankara",
+   "frequency": "439.17500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286062,
+   "callsign": "YM2KCL",
+   "city": "KOCAELI",
+   "frequency": "439.41250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286063,
+   "callsign": "YM3KYM",
+   "city": "Izmir",
+   "frequency": "439.16250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286064,
+   "callsign": "YM8KSU",
+   "city": "Sanliurfa",
+   "frequency": "439.31250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286065,
+   "callsign": "YM5KIS",
+   "city": "Hatay",
+   "frequency": "439.26250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286066,
+   "callsign": "YM5KIS",
+   "city": "Hatay",
+   "frequency": "439.37500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286067,
+   "callsign": "YM3KMA",
+   "city": "Manisa",
+   "frequency": "439.22500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286068,
+   "callsign": "YM8KA",
+   "city": "Sahinbey Gaziantep",
+   "frequency": "431.65000",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286069,
+   "callsign": "YM3CKN",
+   "city": "Canakkale",
+   "frequency": "439.27500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286070,
+   "callsign": "YM4KA",
+   "city": "Antalya",
+   "frequency": "439.20000",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286071,
+   "callsign": "YM4KAL",
+   "city": "Alanya",
+   "frequency": "145.61250",
+   "offset": "-0.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286072,
+   "callsign": "YM3KCN",
+   "city": "CANAKKALE",
+   "frequency": "439.26250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286073,
+   "callsign": "YM2KDB",
+   "city": "KARAMURSEL",
+   "frequency": "439.37500",
+   "offset": "-7.600",
+   "color_code": 2,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286074,
+   "callsign": "YM2KTR",
+   "city": "Ankara",
+   "frequency": "439.21250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "KM69kv",
+   "status": "on-air"
+  },
+  {
+   "locator": 286092,
+   "callsign": "YM4KL",
+   "city": "NAZILLI",
+   "frequency": "439.20000",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "None",
+   "status": "on-air"
+  },
+  {
+   "locator": 286093,
+   "callsign": "YM4KL",
+   "city": "NAZILLI",
+   "frequency": "439.20000",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "None",
+   "status": "on-air"
+  },
+  {
+   "locator": 286101,
+   "callsign": "YM3KRM",
+   "city": "Balkesir",
+   "frequency": "439.16250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286160,
+   "callsign": "YM3KK",
+   "city": "Bursa",
+   "frequency": "439.40000",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286161,
+   "callsign": "YM3KB",
+   "city": "Bursa Nilufer",
+   "frequency": "145.70000",
+   "offset": "-0.600",
+   "color_code": 1,
+   "ipsc_network": "None",
+   "status": "on-air"
+  },
+  {
+   "locator": 286162,
+   "callsign": "YM3KBU",
+   "city": "Bursa",
+   "frequency": "439.16250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286163,
+   "callsign": "YM3KI",
+   "city": "Inegol / Bursa",
+   "frequency": "439.37500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "None",
+   "status": "on-air"
+  },
+  {
+   "locator": 286170,
+   "callsign": "YM3KCN",
+   "city": "CANAKKALE",
+   "frequency": "439.15000",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286270,
+   "callsign": "YM8KS",
+   "city": "Gaziantep",
+   "frequency": "439.40000",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286330,
+   "callsign": "YM5KY",
+   "city": "Mersin",
+   "frequency": "439.17500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286331,
+   "callsign": "YM5KMS",
+   "city": "Mersin",
+   "frequency": "439.42500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "DMR",
+   "status": "on-air"
+  },
+  {
+   "locator": 286333,
+   "callsign": "YM5KSE",
+   "city": "Erdemli Mersin",
+   "frequency": "145.60000",
+   "offset": "-0.600",
+   "color_code": 1,
+   "ipsc_network": "DMR",
+   "status": "on-air"
+  },
+  {
+   "locator": 286340,
+   "callsign": "YM1KE",
+   "city": "Istanbul",
+   "frequency": "439.17500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286341,
+   "callsign": "YM1KWB",
+   "city": "Istanbul",
+   "frequency": "439.38750",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286342,
+   "callsign": "YM1KAT",
+   "city": "Istanbul",
+   "frequency": "439.27500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "None",
+   "status": "on-air"
+  },
+  {
+   "locator": 286343,
+   "callsign": "YM1KYA",
+   "city": "Avcilar",
+   "frequency": "145.73750",
+   "offset": "-0.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286344,
+   "callsign": "YM1KK",
+   "city": "Istanbul",
+   "frequency": "439.22500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286345,
+   "callsign": "YM2KRA",
+   "city": "Camlica Kule",
+   "frequency": "439.16250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286350,
+   "callsign": "YM3KM",
+   "city": "Izmir Konak",
+   "frequency": "439.15000",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286351,
+   "callsign": "YM3KC",
+   "city": "Izmir",
+   "frequency": "439.17500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286352,
+   "callsign": "YM3KC",
+   "city": "Izmir",
+   "frequency": "439.17500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286353,
+   "callsign": "YM3KC",
+   "city": "Izmir",
+   "frequency": "145.67500",
+   "offset": "-0.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286391,
+   "callsign": "YM1EB",
+   "city": "KIRKLARELI",
+   "frequency": "145.62500",
+   "offset": "-0.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286410,
+   "callsign": "YM2KI",
+   "city": "Kocaeli Kartepe",
+   "frequency": "439.27500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "None",
+   "status": "on-air"
+  },
+  {
+   "locator": 286411,
+   "callsign": "YM2KQ",
+   "city": "Kocaeli Golcuk",
+   "frequency": "439.18750",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286412,
+   "callsign": "YM2KDB",
+   "city": "ILIMTEPE",
+   "frequency": "439.37500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286422,
+   "callsign": "YM5KIH",
+   "city": "Konya",
+   "frequency": "439.20000",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "None",
+   "status": "on-air"
+  },
+  {
+   "locator": 286450,
+   "callsign": "YM3KMA",
+   "city": "Manisa",
+   "frequency": "439.17500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286453,
+   "callsign": "YM3KMA",
+   "city": "Manisa",
+   "frequency": "439.22500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286461,
+   "callsign": "YM8KRD",
+   "city": "Kahramanmaraş Andırın",
+   "frequency": "439.40000",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286531,
+   "callsign": "YM9KA",
+   "city": "Rize",
+   "frequency": "145.72500",
+   "offset": "0.600",
+   "color_code": 1,
+   "ipsc_network": "None",
+   "status": "on-air"
+  },
+  {
+   "locator": 286532,
+   "callsign": "YM9KA",
+   "city": "Rize",
+   "frequency": "439.27500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM 2841",
+   "status": "on-air"
+  },
+  {
+   "locator": 286541,
+   "callsign": "YM2KC",
+   "city": "SAKARYA",
+   "frequency": "439.37500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286542,
+   "callsign": "YM2KS",
+   "city": "Sakarya",
+   "frequency": "439.22500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286543,
+   "callsign": "YM2KC",
+   "city": "SAKARYA",
+   "frequency": "145.70000",
+   "offset": "-0.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286544,
+   "callsign": "YM2KS",
+   "city": "Sakarya",
+   "frequency": "439.22500",
+   "offset": "7.600",
+   "color_code": 1,
+   "ipsc_network": "None",
+   "status": "on-air"
+  },
+  {
+   "locator": 286581,
+   "callsign": "YM7KSV",
+   "city": "Sivas Merakum T.",
+   "frequency": "439.17500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286591,
+   "callsign": "YM1KRM",
+   "city": "Tekirdag Merkez",
+   "frequency": "439.16250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286681,
+   "callsign": "YM5KKE",
+   "city": "AKSARAY",
+   "frequency": "439.16250",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  },
+  {
+   "locator": 286771,
+   "callsign": "YM2KBD",
+   "city": "YALOVA",
+   "frequency": "439.37500",
+   "offset": "-7.600",
+   "color_code": 1,
+   "ipsc_network": "BM",
+   "status": "on-air"
+  }
+ ],
+ "brandmeister": [
+  {
+   "id": 286003,
+   "callsign": "YM1KAB",
+   "tx": "439.2375",
+   "rx": "431.6375",
+   "colorcode": 1,
+   "city": "Istanbul",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286004,
+   "callsign": "YM1KPL",
+   "tx": "439.4125",
+   "rx": "431.8125",
+   "colorcode": 1,
+   "city": "TEKIRDAG - KAPAKLI",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286008,
+   "callsign": "YM6VSM",
+   "tx": "439.2750",
+   "rx": "431.6750",
+   "colorcode": 1,
+   "city": "Samsun",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286011,
+   "callsign": "YM5KA",
+   "tx": "439.1625",
+   "rx": "431.5625",
+   "colorcode": 1,
+   "city": "ADANA",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Motorola IP Site Connect"
+  },
+  {
+   "id": 286015,
+   "callsign": "YM2KKB",
+   "tx": "439.1750",
+   "rx": "431.5750",
+   "colorcode": 1,
+   "city": "Karabük",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286018,
+   "callsign": "YM2KKO",
+   "tx": "439.1625",
+   "rx": "431.5625",
+   "colorcode": 1,
+   "city": "Kocaeli",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286020,
+   "callsign": "YM3KMA-2",
+   "tx": "439.1750",
+   "rx": "431.5750",
+   "colorcode": 1,
+   "city": "Manisa",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286025,
+   "callsign": "YM2KA-3",
+   "tx": "439.4250",
+   "rx": "431.8250",
+   "colorcode": 1,
+   "city": "Ankara",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286027,
+   "callsign": "YM4KU",
+   "tx": "439.3750",
+   "rx": "431.7750",
+   "colorcode": 1,
+   "city": "AYDIN KM37WU",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Motorola IP Site Connect"
+  },
+  {
+   "id": 286029,
+   "callsign": "YM2KBL",
+   "tx": "439.1625",
+   "rx": "431.5625",
+   "colorcode": 1,
+   "city": "Bolu",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286030,
+   "callsign": "YM2KBS",
+   "tx": "439.2000",
+   "rx": "431.6000",
+   "colorcode": 1,
+   "city": "Bartin",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286032,
+   "callsign": "YM7KA-1",
+   "tx": "145.7625",
+   "rx": "145.1625",
+   "colorcode": 1,
+   "city": "TRABZON KN90UX",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286033,
+   "callsign": "YM5KY",
+   "tx": "439.2000",
+   "rx": "431.6000",
+   "colorcode": 1,
+   "city": "Mersin",
+   "last_seen": "2026-10-13 17:21:04",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286039,
+   "callsign": "YM3KBC",
+   "tx": "439.1625",
+   "rx": "431.5625",
+   "colorcode": 1,
+   "city": "Çanakkale",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286050,
+   "callsign": "YM5KNV",
+   "tx": "439.1750",
+   "rx": "431.5750",
+   "colorcode": 1,
+   "city": "Nevsehir",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286053,
+   "callsign": "YM6KCO",
+   "tx": "439.3750",
+   "rx": "431.7750",
+   "colorcode": 1,
+   "city": "CORUM",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286054,
+   "callsign": "YM7KYS",
+   "tx": "439.1625",
+   "rx": "431.5625",
+   "colorcode": 1,
+   "city": "Kayseri",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286056,
+   "callsign": "YM5KAA",
+   "tx": "439.2125",
+   "rx": "431.6125",
+   "colorcode": 1,
+   "city": "ADANA",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Motorola IP Site Connect"
+  },
+  {
+   "id": 286060,
+   "callsign": "YM2KA",
+   "tx": "439.2500",
+   "rx": "431.6500",
+   "colorcode": 1,
+   "city": "Ankara",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286061,
+   "callsign": "YM2KRD",
+   "tx": "439.1750",
+   "rx": "431.5750",
+   "colorcode": 1,
+   "city": "Ankara/Elmadağ",
+   "last_seen": "2026-10-13 19:32:13",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286062,
+   "callsign": "YM2KCL",
+   "tx": "439.4125",
+   "rx": "431.8125",
+   "colorcode": 1,
+   "city": "KOCAELI - YUVACIK",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286068,
+   "callsign": "YM8KA",
+   "tx": "439.2500",
+   "rx": "431.6500",
+   "colorcode": 1,
+   "city": "Gaziantep",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286069,
+   "callsign": "YM3CKN-1",
+   "tx": "439.2750",
+   "rx": "431.6750",
+   "colorcode": 1,
+   "city": "CANAKKALE, KN30ed",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286071,
+   "callsign": "YM4KAL",
+   "tx": "145.6125",
+   "rx": "145.0125",
+   "colorcode": 1,
+   "city": "Antalya/Alanya",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286101,
+   "callsign": "YM3KRM",
+   "tx": "439.1625",
+   "rx": "431.5625",
+   "colorcode": 1,
+   "city": "Balikesir",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286160,
+   "callsign": "YM3KK",
+   "tx": "439.4000",
+   "rx": "431.8000",
+   "colorcode": 1,
+   "city": "Bursa,  KN40MI",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286170,
+   "callsign": "YM3KCN",
+   "tx": "439.1500",
+   "rx": "431.5500",
+   "colorcode": 1,
+   "city": "CANAKKALE, KN30ed",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286340,
+   "callsign": "YM1KE",
+   "tx": "439.1750",
+   "rx": "431.5750",
+   "colorcode": 1,
+   "city": "Istanbul",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286343,
+   "callsign": "YM1KYA",
+   "tx": "145.7375",
+   "rx": "145.1375",
+   "colorcode": 1,
+   "city": "Istanbul Adalar",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286344,
+   "callsign": "YM1KK",
+   "tx": "439.2250",
+   "rx": "431.6250",
+   "colorcode": 1,
+   "city": "istanbul",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286345,
+   "callsign": "YM2KRA",
+   "tx": "439.1625",
+   "rx": "431.5625",
+   "colorcode": 1,
+   "city": "Istanbul Çamlica",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286351,
+   "callsign": "YM3KC",
+   "tx": "439.2875",
+   "rx": "431.6875",
+   "colorcode": 1,
+   "city": "izmir",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Motorola IP Site Connect"
+  },
+  {
+   "id": 286412,
+   "callsign": "YM2KDB",
+   "tx": "439.3750",
+   "rx": "431.7750",
+   "colorcode": 2,
+   "city": "KOCAELI - ILIMTEPE",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286450,
+   "callsign": "YM3KMA-1",
+   "tx": "439.1750",
+   "rx": "431.5750",
+   "colorcode": 1,
+   "city": "Manisa",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286541,
+   "callsign": "YM2KC",
+   "tx": "439.3750",
+   "rx": "431.7750",
+   "colorcode": 1,
+   "city": "SAKARYA, KN50DS",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286542,
+   "callsign": "YM2KS",
+   "tx": "439.2370",
+   "rx": "431.6375",
+   "colorcode": 1,
+   "city": "SAKARYA/HENDEK, KN50jS",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286543,
+   "callsign": "YM2KC-1",
+   "tx": "145.7000",
+   "rx": "145.1000",
+   "colorcode": 1,
+   "city": "SAKARYA,KN50FN",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286581,
+   "callsign": "YM7KSV",
+   "tx": "439.1750",
+   "rx": "431.5750",
+   "colorcode": 1,
+   "city": "SiVAS",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286591,
+   "callsign": "YM1KRM",
+   "tx": "439.1625",
+   "rx": "431.5625",
+   "colorcode": 1,
+   "city": "Tekirdag",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286681,
+   "callsign": "YM5KKE",
+   "tx": "439.1625",
+   "rx": "431.5625",
+   "colorcode": 1,
+   "city": "Aksaray",
+   "last_seen": "2026-10-13 19:55:11",
+   "linkname": "Hytera Multi-Site Connect"
+  },
+  {
+   "id": 286771,
+   "callsign": "YM2KBD",
+   "tx": "439.3750",
+   "rx": "431.7750",
+   "colorcode": 1,
+   "city": "YALOVA, KN40PP",
+   "last_seen": "2026-10-13 19:55:09",
+   "linkname": "MMDVM Host"
+  }
+ ]
+}

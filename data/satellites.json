@@ -1,0 +1,22 @@
+{
+ "comment": "FM satellites for the satellite screen of OpenGD77. Frequencies in Hz, CTCSS in Hz. The 8 first ones are the list of the OpenGD77 CPS (read back from the radio on 2026-10-13), the TEVEL2 ones come from SatNOGS DB (transmitters alive and active, Mode V/U FM transponder, 2026-10-17). aprsPath: digipeater path used for the APRS beacon on the satellite.",
+ "satellites": [
+  {"name": "AO-123",   "norad": 61781, "voiceRx": 435400000, "voiceTx": 145850000, "ctcss": 67.0, "otherRx": 436210000},
+  {"name": "AO-91",    "norad": 43017, "voiceRx": 145960000, "voiceTx": 435250000, "ctcss": 67.0, "otherRx": 145960000},
+  {"name": "ISS",      "norad": 25544, "voiceRx": 437800000, "voiceTx": 145990000, "ctcss": 67.0, "aprsRx": 145825000, "aprsTx": 145825000, "otherRx": 145800000, "aprsPath": "RS0ISS"},
+  {"name": "LilacSat", "norad": 40908, "voiceRx": 437200000, "voiceTx": 144350000, "otherRx": 437200000},
+  {"name": "PO-101",   "norad": 43678, "voiceRx": 145900000, "voiceTx": 437500000, "ctcss": 141.3, "otherRx": 145900000},
+  {"name": "SO-50",    "norad": 27607, "voiceRx": 436795000, "voiceTx": 145850000, "ctcss": 67.0, "armCtcss": 74.4, "otherRx": 436795000},
+  {"name": "SONATE-2", "norad": 59112, "voiceRx": 145880000, "aprsRx": 145825000, "aprsTx": 145825000, "otherRx": 145840000, "aprsPath": "DP0SNX"},
+  {"name": "UmKA-1",   "norad": 57172, "voiceRx": 437625000, "otherRx": 437625000},
+  {"name": "TEVEL2-1", "norad": 63217, "voiceRx": 436400000, "voiceTx": 145970000, "otherRx": 436400000},
+  {"name": "TEVEL2-2", "norad": 63219, "voiceRx": 436400000, "voiceTx": 145970000, "otherRx": 436400000},
+  {"name": "TEVEL2-3", "norad": 63218, "voiceRx": 436400000, "voiceTx": 145970000, "otherRx": 436400000},
+  {"name": "TEVEL2-4", "norad": 63213, "voiceRx": 436400000, "voiceTx": 145970000, "otherRx": 436400000},
+  {"name": "TEVEL2-5", "norad": 63214, "voiceRx": 436400000, "voiceTx": 145970000, "otherRx": 436400000},
+  {"name": "TEVEL2-6", "norad": 63215, "voiceRx": 436400000, "voiceTx": 145970000, "otherRx": 436400000},
+  {"name": "TEVEL2-7", "norad": 63238, "voiceRx": 436400000, "voiceTx": 145970000, "otherRx": 436400000},
+  {"name": "TEVEL2-8", "norad": 63239, "voiceRx": 436400000, "voiceTx": 145970000, "otherRx": 436400000},
+  {"name": "TEVEL2-9", "norad": 63237, "voiceRx": 436400000, "voiceTx": 145970000, "otherRx": 436400000}
+ ]
+}

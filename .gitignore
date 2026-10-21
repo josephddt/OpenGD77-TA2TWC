@@ -1,0 +1,24 @@
+# Build outputs (one directory per configuration of .cproject)
+MDUV380_firmware/*_FW/
+MDUV380_firmware/application/source/linkerdata/*.bin
+sim/build/
+sim/out/
+__pycache__/
+
+# Backups of the radio (personal data: DMR ID, codeplug, calibration)
+backup/
+release/
+tools/*.log
+guide/node_modules/
+guide/out/
+guide/public/
+
+# GD-77 build output and the blank codec sections made by codec_cleaner
+GD77_firmware/GD-77/
+GD77_firmware/linkerdata/*.bin
+
+# GD-77 upstream: only the release zip (language files used by make_image_gd77.py) and the readme are kept
+upstream/MK22_R20260131/OPENGD77_20260131/
+upstream/MK22_R20260131/OPENGD77_MK22_20260131.zip
+upstream/MK22_R20260131/OpenGD77_20260131_python_tools_MK22.zip
+upstream/MK22_R20260131/gd-77_firmware_loader.py

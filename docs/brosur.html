@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>MD-UV390 özel yazılım: tanıtım</title>
+<style>
+  @page { size: A4; margin: 0; }
+
+  :root {
+    --bg: #03070e;
+    --panel: #0a1722;
+    --line: #1a4456;
+    --cyan: #00e5ff;
+    --amber: #ffb000;
+    --green: #39ff7a;
+    --text: #f2fbff;
+    --dim: #8fb4c2;
+    --faint: #5c8494;
+  }
+
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html { font: 9.6pt/1.4 "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--text); }
+  body { margin: 0; }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    padding: 11mm 14mm 9mm;
+    background:
+      radial-gradient(circle at 12% 0%, rgba(0, 229, 255, 0.16), transparent 42%),
+      radial-gradient(circle at 100% 100%, rgba(255, 176, 0, 0.09), transparent 40%),
+      var(--bg);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .page { position: relative; }
+  .owner { position: absolute; top: 10mm; right: 14mm; text-align: right; font-size: 9pt; letter-spacing: 0.06em; color: var(--dim); border-right: 0.8mm solid var(--cyan); padding-right: 3mm; line-height: 1.3; }
+  .owner b { display: block; font-size: 17pt; letter-spacing: 0.05em; color: var(--text); font-weight: 700; }
+  .kicker { font-size: 8pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cyan); font-weight: 600; }
+  h1 { font-size: 27pt; line-height: 1.06; letter-spacing: -0.025em; margin: 2.5mm 0 3mm; font-weight: 700; }
+  h1 span { color: var(--cyan); }
+  .lead { font-size: 11.5pt; line-height: 1.4; color: var(--dim); max-width: 140mm; margin: 0; }
+
+  img { display: block; width: 100%; border-radius: 1.4mm; border: 0.3mm solid var(--line); image-rendering: pixelated; }
+
+  /* Main screen */
+  .hero { display: grid; grid-template-columns: 66mm 1fr; gap: 8mm; align-items: center; margin-top: 5mm; }
+  .hero h2 { font-size: 15pt; margin: 0 0 1mm; letter-spacing: -0.01em; }
+  .hero .sub { color: var(--dim); margin: 0 0 3.5mm; }
+  .hero ul { list-style: none; margin: 0; padding: 0; }
+  .hero li { display: grid; grid-template-columns: 4mm 1fr; gap: 2.5mm; margin-bottom: 2.2mm; }
+  .hero li::before { content: ""; width: 1.2mm; height: 100%; border-radius: 1mm; background: var(--cyan); }
+  .hero li b { display: block; font-weight: 600; }
+  .hero li span { color: var(--dim); }
+
+  h3.section { font-size: 8pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); font-weight: 600; margin: 5mm 0 2.5mm; display: flex; align-items: center; gap: 3mm; }
+  h3.section::after { content: ""; flex: 1; height: 0.25mm; background: var(--line); }
+
+  /* Screens */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3.5mm 6mm; }
+  .card img { width: 43mm; margin: 0 auto; }
+  .card { background: var(--panel); border: 0.25mm solid var(--line); border-radius: 2mm; padding: 2.5mm 3mm; }
+  .card h4 { font-size: 10.5pt; margin: 2mm 0 0.4mm; font-weight: 600; }
+  .card p { margin: 0; color: var(--dim); font-size: 8.8pt; line-height: 1.35; }
+
+  /* Small features */
+  .chips { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5mm 5mm; }
+  .chip b { display: block; font-weight: 600; font-size: 9.6pt; }
+  .chip b::before { content: ""; display: inline-block; width: 1.8mm; height: 1.8mm; border-radius: 50%; background: var(--amber); margin-right: 1.8mm; vertical-align: 0.2mm; }
+  .chip span { color: var(--dim); font-size: 8.6pt; line-height: 1.3; display: block; padding-left: 3.6mm; }
+
+  .footer { margin-top: auto; padding-top: 3.5mm; border-top: 0.25mm solid var(--line); display: grid; grid-template-columns: 1fr auto; gap: 8mm; align-items: end; color: var(--faint); font-size: 8pt; line-height: 1.4; }
+  .footer .sign { text-align: right; color: var(--dim); white-space: nowrap; }
+  .footer .sign b { display: block; font-size: 13pt; color: var(--text); letter-spacing: 0.04em; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="owner"><b>TA2TWC</b>DMR ID 2867656</div>
+  <div class="kicker">TYT MD-UV380 / MD-UV390 · OpenGD77 tabanlı özel yazılım</div>
+  <h1>Bütün bilgi <span>tek ekranda</span></h1>
+  <p class="lead">OpenGD77'nin sağlam radyo altyapısı üzerine yeniden tasarlanmış ekranlar: sinyali, kanalı ve telsizin durumunu bir bakışta gösterir.</p>
+
+  <div class="hero">
+    <img src="img/home_live.png" alt="">
+    <div>
+      <h2>Yeni ana ekran</h2>
+      <p class="sub">Telsizden alınmış gerçek ekran görüntüsü.</p>
+      <ul>
+        <li><div><b>Büyük frekans, net kanal adı</b><span>Altında bölge, kanal sırası ve gönderme frekansı.</span></div></li>
+        <li><div><b>Sinyal her an görünür</b><span>S değeri, dBm, sinyal kalitesi (Q %) ve S-metre çubuğu.</span></div></li>
+        <li><div><b>Telsizin durumu</b><span>Pil yüzdesi ve voltajı, güç, sıcaklık, gürültü seviyesi.</span></div></li>
+        <li><div><b>Sinyal geçmişi</b><span>En altta, son dakikaların sinyal gücünü gösteren kayan çizelge.</span></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="section">Ekranlar</h3>
+  <div class="cards">
+    <div class="card">
+      <img src="img/call.png" alt="">
+      <h4>DMR çağrısı</h4>
+      <p>Çağrı işareti büyük yazıyla; ad, şehir, kimlik ve konuşma grubu.</p>
+    </div>
+    <div class="card">
+      <img src="img/tx.png" alt="">
+      <h4>Gönderme</h4>
+      <p>Kırmızı TX rozeti, kalan süre çubuğu, FM'de mikrofon seviyesi.</p>
+    </div>
+    <div class="card">
+      <img src="img/sweep.png" alt="">
+      <h4>Spektrum ve şelale</h4>
+      <p>VFO taramasında renkli spektrum; altında sinyallerin zaman içindeki izi.</p>
+    </div>
+    <div class="card">
+      <img src="img/rssi.png" alt="">
+      <h4>İbreli S-metre</h4>
+      <p>Analog gösterge, son tepe değeri işaretli.</p>
+    </div>
+    <div class="card">
+      <img src="img/last_heard.png" alt="">
+      <h4>Son Duyulanlar</h4>
+      <p>Duyulan istasyonlar, ne kadar önce duyuldukları ve sinyal güçleri.</p>
+    </div>
+    <div class="card">
+      <img src="img/boot_060.png" alt="">
+      <h4>Açılış ve kapanış</h4>
+      <p>Kendi çağrı işaretiniz ve DMR kimliğinizle açılış; kapanışta “73”.</p>
+    </div>
+  </div>
+
+  <h3 class="section">Ayrıca</h3>
+  <div class="chips">
+    <div class="chip"><b>Koyu tema</b><span>Gece ve gündüz rahat okunan renkler.</span></div>
+    <div class="chip"><b>Pil yüzdesi</b><span>Seviyeye göre yeşil, turuncu, kırmızı.</span></div>
+    <div class="chip"><b>9 satırlı menü</b><span>Küçük yazıyla daha çok seçenek.</span></div>
+    <div class="chip"><b>Ses göstergesi</b><span>Düğmeyi çevirince ses çubuğu.</span></div>
+    <div class="chip"><b>Türkçe ve İngilizce</b><span>Dil menüden seçilir.</span></div>
+    <div class="chip"><b>TS/CC uyarısı</b><span>Çağrı başka gruptan geliyorsa kırmızı.</span></div>
+    <div class="chip"><b>Klasik ekran</b><span>İstenirse eski görünüme dönülür.</span></div>
+    <div class="chip"><b>Kanallar korunur</b><span>Kanal, bölge ve kişiler yerinde kalır.</span></div>
+  </div>
+
+  <div class="footer">
+    <div>
+      Radyo işlevleri (alma, gönderme, DMR) OpenGD77 ile aynıdır. Yalnızca TYT MD-UV390 (5 W, GPS'siz) üzerinde denenmiştir; resmi bir ürün değildir, garanti verilmez. Ana ekran dışındaki görüntüler aynı yazılımın bilgisayarda çizdiği önizlemelerdir ve örnek veriler içerir.<br>
+      OpenGD77 projesine dayanır (R. Clark VK3KYY, D. Caujolle-Bert F1RMB ve katkıda bulunanlar). Ticari değildir, satılamaz.
+    </div>
+    <div class="sign">Hazırlayan<b>TA2TWC</b></div>
+  </div>
+
+</div>
+</body>
+</html>

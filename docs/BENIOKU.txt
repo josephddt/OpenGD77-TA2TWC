@@ -1,0 +1,25 @@
+OpenMDUV390 TA2TWC - TYT MD-UV380 / MD-UV390 icin OpenGD77 tabanli yazilim
+============================================================================
+
+Kurulum icin OpenMDUV390_TA2TWC_Kurulum_Kilavuzu.pdf dosyasini okuyun.
+
+Kisaca:
+  1. Telsizinizin yedegini alin.
+  2. Telsizi yukleme moduna alin (PTT + ustundeki yan tus basiliyken acin).
+  3. OpenGD77 CPS > Extras > Firmware loader > MD-UV380
+     - ilk seferde resmi (donor) yazilim dosyasini secin (telsizde zaten
+       OpenGD77 olsa da gerekir; bu bilgisayarda daha once secildiyse
+       CPS hatirlar),
+     - "Select Open firmware file and update" ile zip dosyasini secin:
+         OpenMDUV380_TA2TWC_5W.zip        standart 5 W telsiz
+         OpenMDUV380_TA2TWC_10W_PLUS.zip  yalnizca MD-UV390 Plus 10 W (denenmedi)
+     Zip dosyalarini acmayin.
+
+DMR ses kodegi (AMBE) bu pakette yoktur; CPS onu sizin resmi yazilim
+dosyanizdan ekler.
+
+Lisans: OpenGD77 lisansi (LISANS_license.txt). Ticari kullanim yasaktir;
+paketi ucretsiz ve bu dosyalarla birlikte paylasin.
+Yazilim "oldugu gibi" verilir, hicbir garanti yoktur.
+
+73 - TA2TWC

@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>MD-UV390 Özel Yazılım: Kurulum ve Kullanım Kılavuzu</title>
+<style>
+  @page {
+    size: A4;
+    margin: 15mm 16mm 17mm 16mm;
+    @bottom-left { content: "MD-UV390 özel yazılım kılavuzu · TA2TWC"; font: 8pt "Segoe UI", sans-serif; color: #7a8a90; }
+    @bottom-right { content: counter(page) " / " counter(pages); font: 8pt "Segoe UI", sans-serif; color: #7a8a90; }
+  }
+  @page :first { @bottom-left { content: ""; } @bottom-right { content: ""; } }
+
+  :root {
+    --ink: #16232a;
+    --dim: #55666e;
+    --line: #d5dee2;
+    --accent: #007c91;
+    --accent-soft: #e6f4f7;
+    --warn: #b45309;
+    --warn-soft: #fdf3e3;
+    --danger: #b3261e;
+    --danger-soft: #fbeceb;
+    --code-bg: #0c1d2a;
+    --code-ink: #e8f6fa;
+  }
+
+  * { box-sizing: border-box; }
+  html { font: 10pt/1.45 "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); }
+  body { margin: 0; }
+
+  h1 { font-size: 27pt; line-height: 1.12; margin: 0 0 4mm; letter-spacing: -0.02em; }
+  h2 { font-size: 16pt; line-height: 1.2; margin: 0 0 4mm; padding-bottom: 2mm; border-bottom: 0.6mm solid var(--accent); break-after: avoid; }
+  h3 { font-size: 11.5pt; margin: 4.5mm 0 2mm; break-after: avoid; }
+  p { margin: 0 0 3mm; }
+  ul, ol { margin: 0 0 3mm; padding-left: 5.5mm; }
+  li { margin-bottom: 1.2mm; }
+  strong { font-weight: 600; }
+  a { color: var(--accent); text-decoration: none; }
+
+  section { break-before: page; }
+  section.cover { break-before: auto; }
+
+  code { font: 9.2pt Consolas, "Cascadia Mono", monospace; background: #eef3f5; padding: 0.3mm 1.2mm; border-radius: 1mm; }
+  pre { font: 9.2pt/1.45 Consolas, "Cascadia Mono", monospace; background: var(--code-bg); color: var(--code-ink); padding: 2.2mm 4mm; border-radius: 1.5mm; margin: 0 0 3mm; white-space: pre-wrap; break-inside: avoid; }
+  pre .c { color: #7fa6b5; }
+
+  .note, .warn, .danger { border-left: 1.2mm solid var(--accent); background: var(--accent-soft); padding: 2.5mm 4mm; border-radius: 0 1.5mm 1.5mm 0; margin: 0 0 4mm; break-inside: avoid; }
+  .warn { border-color: var(--warn); background: var(--warn-soft); }
+  .danger { border-color: var(--danger); background: var(--danger-soft); }
+  .note p:last-child, .warn p:last-child, .danger p:last-child { margin-bottom: 0; }
+  .tag { font-weight: 600; }
+
+  /* Cover */
+  .cover { display: flex; flex-direction: column; min-height: 262mm; }
+  .cover .kicker { font-size: 10pt; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 5mm; }
+  .cover .lead { font-size: 13pt; line-height: 1.45; color: var(--dim); max-width: 150mm; margin-bottom: 9mm; }
+  .cover .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; margin-bottom: 9mm; }
+  .cover .meta { margin-top: auto; border-top: 0.3mm solid var(--line); padding-top: 4mm; color: var(--dim); font-size: 9.5pt; display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 8mm; }
+  .cover .meta b { color: var(--ink); font-weight: 600; }
+
+  figure { margin: 0; break-inside: avoid; }
+  figure img { display: block; width: 100%; border-radius: 1.5mm; border: 0.3mm solid #0c1d2a; image-rendering: pixelated; }
+  figcaption { font-size: 8.5pt; color: var(--dim); margin-top: 1.5mm; line-height: 1.35; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm 8mm; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; }
+  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm; }
+  .grid4 figure, .grid3 figure { max-width: 40mm; }
+
+  table { width: 100%; border-collapse: collapse; margin: 0 0 4mm; font-size: 9.8pt; break-inside: avoid; }
+  th, td { text-align: left; vertical-align: top; padding: 1.3mm 2.5mm; border-bottom: 0.25mm solid var(--line); }
+  th { font-weight: 600; color: var(--dim); font-size: 8.8pt; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 0.4mm solid var(--ink); }
+  td.n { width: 8mm; }
+
+  .num { display: inline-flex; align-items: center; justify-content: center; width: 5.4mm; height: 5.4mm; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 600; font-size: 8.5pt; }
+
+  /* Steps */
+  .step { display: grid; grid-template-columns: 11mm 1fr; gap: 0 3mm; margin-bottom: 3.5mm; }
+  .step > .no { width: 9mm; height: 9mm; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 600; font-size: 12pt; display: flex; align-items: center; justify-content: center; }
+  .step h3 { margin: 1mm 0 2mm; }
+  .step > div > :last-child { margin-bottom: 0; }
+
+  /* Annotated screen */
+  .annotated { display: grid; grid-template-columns: 78mm 1fr; gap: 7mm; align-items: start; break-inside: avoid; margin-bottom: 5mm; }
+  .annotated .screen { position: relative; padding-left: 8mm; }
+  .annotated .screen .num { position: absolute; left: 0; transform: translateY(-50%); }
+  .annotated table { margin: 0; }
+
+  .checklist { list-style: none; padding-left: 0; }
+  .checklist li { padding-left: 7mm; position: relative; }
+  .checklist li::before { content: ""; position: absolute; left: 0; top: 1.1mm; width: 3.6mm; height: 3.6mm; border: 0.4mm solid var(--dim); border-radius: 0.7mm; }
+</style>
+</head>
+<body>
+
+<!-- ===================================================================== -->
+<section class="cover">
+  <div class="kicker">TYT MD-UV380 / MD-UV390 · OpenGD77 tabanlı</div>
+  <h1>Özel yazılım:<br>kurulum ve kullanım kılavuzu</h1>
+  <p class="lead">OpenGD77 üzerine eklenen yeni ana ekranı, sinyal göstergelerini, spektrum görüntüsünü ve açılış/kapanış animasyonlarını kendi telsizinize nasıl kuracağınızı ve nasıl kullanacağınızı adım adım anlatır.</p>
+
+  <div class="shots">
+    <figure><img src="img/boot_060.png" alt=""><figcaption>Açılış animasyonu, kendi çağrı işaretinizle</figcaption></figure>
+    <figure><img src="img/home_live.png" alt=""><figcaption>Yeni ana ekran (telsizden alınmış gerçek görüntü)</figcaption></figure>
+    <figure><img src="img/call.png" alt=""><figcaption>DMR çağrısı alınırken</figcaption></figure>
+  </div>
+
+  <div class="note">
+    <p><span class="tag">Bu kılavuz kimin için?</span> Telsizinde <strong>zaten OpenGD77 kurulu olan</strong>, Windows bilgisayarda komut satırına birkaç komut yazmaktan çekinmeyen amatörler için. Programlama bilgisi gerekmez; komutlar olduğu gibi kopyalanır.</p>
+  </div>
+
+  <h3>İçindekiler</h3>
+  <table>
+    <tr><td class="n">1</td><td>Neler değişti</td><td class="n">2</td></tr>
+    <tr><td class="n">2</td><td>Başlamadan önce: gerekenler ve riskler</td><td class="n">3</td></tr>
+    <tr><td class="n">3</td><td>Kurulum: yedek, derleme, yükleme</td><td class="n">4</td></tr>
+    <tr><td class="n">4</td><td>Kullanım: ekranlar, ayarlar, kısayollar</td><td class="n">6</td></tr>
+    <tr><td class="n">5</td><td>Sorun giderme ve eski yazılıma dönüş</td><td class="n">8</td></tr>
+  </table>
+
+  <div class="meta">
+    <div><b>Hazırlayan:</b> TA2TWC</div>
+    <div><b>Taban:</b> OpenGD77 R20260131 (MDUV380)</div>
+    <div><b>Denendiği cihaz:</b> TYT MD-UV390, 5 W, GPS'siz</div>
+    <div><b>Lisans:</b> ticari olmayan kullanım (bkz. son sayfa)</div>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<section>
+  <h2>1 · Neler değişti</h2>
+  <p>Yazılımın radyo tarafı (alma, gönderme, DMR, kanal ve kişi yapısı) OpenGD77 ile aynıdır; mevcut kanallarınız ve kişileriniz yerinde kalır. Değişen, ekranda gördükleriniz ve birkaç kullanım kolaylığıdır.</p>
+
+  <table>
+    <tr><th>Yenilik</th><th>Ne işe yarar</th></tr>
+    <tr><td><strong>Yeni ana ekran</strong></td><td>Büyük frekans, kanal adı, bölge, gönderme frekansı ve tüm teknik değerler tek ekranda. İstenirse menüden klasik görünüme dönülür.</td></tr>
+    <tr><td><strong>Sinyal göstergeleri</strong></td><td>S değeri, dBm, sinyal kalitesi (Q %), ham gürültü, pil voltajı ve sıcaklık sürekli görünür.</td></tr>
+    <tr><td><strong>Sinyal geçmişi</strong></td><td>Ekranın altında, son dakikalardaki sinyal gücünü gösteren kayan çizelge.</td></tr>
+    <tr><td><strong>DMR çağrı ekranı</strong></td><td>Çağrı işareti büyük yazıyla; ad, şehir, DMR kimliği ve konuşma grubu ayrı satırlarda.</td></tr>
+    <tr><td><strong>Gönderme ekranı</strong></td><td>Kırmızı TX rozeti, kalan süre çubuğu, FM'de mikrofon seviyesi.</td></tr>
+    <tr><td><strong>Spektrum ve şelale</strong></td><td>VFO taramasında renkli spektrum ve altında zaman içinde akan şelale görüntüsü.</td></tr>
+    <tr><td><strong>İbreli S-metre</strong></td><td>RSSI ekranında tepe değeri işaretli analog gösterge.</td></tr>
+    <tr><td><strong>Pil yüzdesi</strong></td><td>Durum çubuğunda yüzde olarak; seviyeye göre yeşil, turuncu, kırmızı.</td></tr>
+    <tr><td><strong>Küçük menü yazısı</strong></td><td>Menülerde 7 yerine 9 satır görünür.</td></tr>
+    <tr><td><strong>Açılış ve kapanış</strong></td><td>Çağrı işaretinizin ve DMR kimliğinizin göründüğü animasyonlar.</td></tr>
+    <tr><td><strong>Koyu tema</strong></td><td>Varsayılan renkler koyu zemine göre ayarlandı.</td></tr>
+    <tr><td><strong>Türkçe ve İngilizce</strong></td><td>Eklenen tüm yazılar iki dilde; dil menüden seçilir.</td></tr>
+  </table>
+
+  <div class="grid4">
+    <figure><img src="img/tx.png" alt=""><figcaption>Gönderme</figcaption></figure>
+    <figure><img src="img/sweep.png" alt=""><figcaption>Spektrum ve şelale</figcaption></figure>
+    <figure><img src="img/rssi.png" alt=""><figcaption>İbreli S-metre</figcaption></figure>
+    <figure><img src="img/shutdown_015.png" alt=""><figcaption>Kapanış</figcaption></figure>
+  </div>
+
+  <h3>Olmayanlar</h3>
+  <ul>
+    <li><strong>SWR ölçümü yok.</strong> Bu telsizde ileri/yansıyan gücü ölçen bir devre bulunmadığı için yazılımla eklenemez.</li>
+    <li><strong>Çift dinleme (aynı anda iki frekans) yok.</strong> Telsizde tek alıcı çipi var.</li>
+    <li><strong>İşlemci hızı değiştirilmedi.</strong> Kararlılık için OpenGD77'nin ayarları korundu.</li>
+  </ul>
+  <p style="color:var(--dim);font-size:9pt">Ekran görüntülerinin kaynağı: kapaktaki ana ekran telsizden alınmıştır; diğerleri aynı yazılım kodunun bilgisayarda çizdiği önizlemelerdir ve örnek veriler içerir.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section>
+  <h2>2 · Başlamadan önce</h2>
+
+  <div class="danger">
+    <p><span class="tag">Sorumluluk size aittir.</span> Bu resmi olmayan, gönüllü bir yazılımdır ve hiçbir garanti verilmez. Yalnızca bir cihazda (MD-UV390, 5 W, GPS'siz) denenmiştir. Yedek almadan yükleme yapmayın. Telsizi yalnızca lisansınızın izin verdiği frekans ve güçlerde kullanmak sizin sorumluluğunuzdadır.</p>
+  </div>
+
+  <h3>Uygun cihazlar</h3>
+  <ul>
+    <li><strong>TYT MD-UV380 / MD-UV390</strong> (OpenGD77'nin "MDUV380" sürümünü kullanan cihazlar). MD-380 ve MD-390 (tek bant) <strong>uygun değildir</strong>.</li>
+    <li>Telsizde <strong>OpenGD77 kurulu ve çalışır</strong> olmalı. Kurulum, DMR ses kodeğini telsizinizdeki mevcut kurulumdan alır; fabrika yazılımlı bir telsize önce resmi OpenGD77 kurulmalıdır.</li>
+    <li>GPS'li ve 10 W modellerde denenmedi.</li>
+  </ul>
+
+  <h3>Gerekenler</h3>
+  <table>
+    <tr><th>Ne</th><th>Açıklama</th></tr>
+    <tr><td>Bilgisayar</td><td>Windows 10 veya 11. (Araçlar Python ile yazıldı; Linux'ta sürücü adımı gerekmez ama denenmedi.)</td></tr>
+    <tr><td>Programlama kablosu</td><td>Telsizin USB kablosu. OpenGD77 CPS ile kullandığınız kablo.</td></tr>
+    <tr><td>Proje klasörü</td><td>Bu kılavuzla birlikte verilen kaynak kod klasörü. İçinde <code>build.py</code>, <code>tools</code>, <code>MDUV380_firmware</code> bulunur.</td></tr>
+    <tr><td>Python 3</td><td><a href="https://www.python.org/downloads/">python.org</a> adresinden. Kurulumda "Add Python to PATH" işaretlenmeli.</td></tr>
+    <tr><td>Arm GNU Toolchain</td><td><a href="https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads">developer.arm.com</a> adresinden, <strong>arm-none-eabi</strong> Windows kurulumu (14.2 sürümüyle denendi). Varsayılan klasöre kurmanız yeterli.</td></tr>
+  </table>
+
+  <h3>Bilmeniz gerekenler</h3>
+  <ul>
+    <li><strong>Ayarlar sıfırlanır, kanallar kalır.</strong> İlk yüklemeden sonra telsiz ayarları (dil, parlaklık, ses seçenekleri) varsayılana döner. Kanallar, bölgeler ve kişiler silinmez.</li>
+    <li><strong>Geri dönüş mümkündür.</strong> Yükleyici telsizin önyükleyicisine (bootloader) dokunmaz; yükleme yarıda kalsa bile telsiz yükleme moduna alınıp yeniden yazılabilir. Yedekten eski yazılıma dönüş 5. bölümde anlatılır.</li>
+    <li><strong>Derlediğiniz dosyayı paylaşmayın.</strong> Oluşan yükleme dosyası, telsizinizden kopyalanan ve lisansı size ait olmayan DMR ses kodeğini içerir. Başkasına kaynak klasörünü ve bu kılavuzu verin; herkes kendi telsizi için kendisi derlesin.</li>
+  </ul>
+
+  <h3>Hazırlık listesi</h3>
+  <ul class="checklist">
+    <li>Telsizin pili dolu.</li>
+    <li>Telsizde OpenGD77 çalışıyor, bilgisayar USB ile bağlanınca telsizi görüyor.</li>
+    <li>Python ve Arm GNU Toolchain kurulu.</li>
+    <li>Proje klasörü, adında Türkçe karakter ve boşluk olmayan bir yere kopyalandı (örnek: <code>C:\md390</code>).</li>
+  </ul>
+</section>
+
+<!-- ===================================================================== -->
+<section>
+  <h2>3 · Kurulum</h2>
+  <p>Komutların tamamı proje klasöründe, bir komut penceresinde çalıştırılır. Klasörü Dosya Gezgini'nde açın, adres çubuğuna <code>powershell</code> yazıp Enter'a basın.</p>
+
+  <div class="step">
+    <div class="no">1</div>
+    <div>
+      <h3>Python paketlerini kurun</h3>
+      <pre>pip install pyserial pillow pyusb libusb-package</pre>
+      <p>Bu adım bir kez yapılır.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="no">2</div>
+    <div>
+      <h3>Telsizi bağlayın ve bağlantıyı deneyin</h3>
+      <p>Telsiz <strong>açık ve normal çalışır durumdayken</strong> USB kablosunu takın.</p>
+      <pre>python tools/radio.py info</pre>
+      <p>Telsizin modeli ve yazılım sürümü görünmelidir. "No radio found" yazıyorsa kabloyu ve telsizin açık olduğunu kontrol edin.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="no">3</div>
+    <div>
+      <h3>Yedek alın</h3>
+      <pre>python tools/radio.py backup</pre>
+      <p>On dakika kadar sürebilir. Telsizin yazılımı, kanal hafızası ve fabrika kalibrasyonu <code>backup\&lt;tarih&gt;</code> klasörüne kaydedilir. Bu klasörü ayrıca güvenli bir yere de kopyalayın.</p>
+      <div class="warn"><p><span class="tag">Bu adımı atlamayın.</span> Hem geri dönüş için hem de sonraki adımda DMR ses kodeğini almak için bu yedek gereklidir.</p></div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="no">4</div>
+    <div>
+      <h3>Çağrı işaretinizi yazın</h3>
+      <p>Açılış ve kapanış ekranındaki çağrı işareti kaynak kodda yazılıdır. Şu dosyayı Not Defteri ile açın:</p>
+      <pre>MDUV380_firmware\application\include\user_interface\uiBootAnimation.h</pre>
+      <p>Aşağıdaki satırda tırnak içindeki yazıyı kendi çağrı işaretinizle değiştirip kaydedin (en çok 9 karakter, Türkçe karakter kullanmayın):</p>
+      <pre>#define BOOT_ANIMATION_CALLSIGN            "TA2TWC"</pre>
+      <p>DMR kimliğiniz için bir şey yapmanız gerekmez; telsizdeki kayıtlı kimlik otomatik gösterilir.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="no">5</div>
+    <div>
+      <h3>Yazılımı derleyin ve yükleme dosyasını hazırlayın</h3>
+      <pre>python build.py
+python tools/make_image.py</pre>
+      <p>İlk komut yazılımı derler (birkaç dakika). İkincisi, yedeğinizdeki DMR ses kodeğini ve Türkçe dil dosyasını ekleyip yükleme dosyasını <code>release</code> klasörüne yazar. Ekranda dosyanın adı görünür; 7. adımda bu adı kullanacaksınız.</p>
+      <p>Ayrıca <code>backup\&lt;tarih&gt;\restore_firmware.bin</code> oluşur: bu, telsizinizdeki <strong>eski</strong> yazılımdır ve geri dönüş için saklanır.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="no">6</div>
+    <div>
+      <h3>Telsizi yükleme moduna alın</h3>
+      <ol>
+        <li>Telsizi kapatın. USB kablosu takılı kalsın.</li>
+        <li><strong>PTT tuşu ile hemen üstündeki yan tuşu</strong> birlikte basılı tutun.</li>
+        <li>Tuşlar basılıyken telsizi açın, sonra tuşları bırakın. Ekran açılmaz; bu normaldir.</li>
+      </ol>
+      <p><strong>Yalnızca ilk seferde</strong> Windows'a sürücü tanıtmak gerekir. Komut penceresini <strong>yönetici olarak</strong> açıp şunu çalıştırın:</p>
+      <pre>python tools/winusb_dfu_driver.py</pre>
+      <p>"OK: WinUSB driver installed" yazmalıdır. Bu komut, Windows'un kendi WinUSB sürücüsünü telsizin yükleme moduna atar; internetten sürücü indirmez.</p>
+      <p>Telsizin görünüp görünmediğini denetleyin:</p>
+      <pre>python tools/flash.py --list</pre>
+      <p>Listede <code>0483:df11</code> görünmelidir.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="no">7</div>
+    <div>
+      <h3>Yükleyin</h3>
+      <p>5. adımda ekranda gördüğünüz dosya adını yazın:</p>
+      <pre>python tools/flash.py release\TA2TWC_MDUV390_xxxxxxx.bin</pre>
+      <p>Yaklaşık 20 saniye sürer. "100% complete" yazınca telsizi kapatıp <strong>tuşlara basmadan</strong> yeniden açın.</p>
+      <div class="warn"><p><span class="tag">Yükleme sırasında</span> kabloyu çıkarmayın ve telsizi kapatmayın. Yarıda kalırsa telaşlanmayın: 6. adımı tekrarlayıp yeniden yükleyin.</p></div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="no">8</div>
+    <div>
+      <h3>İlk açılış</h3>
+      <ul>
+        <li>Açılış animasyonundan sonra <strong>"Settings Updated"</strong> kutusu çıkar: ayarların sıfırlandığını bildirir. <strong>Yeşil tuşa</strong> basın.</li>
+        <li>Dil İngilizce gelir. <strong>Menu → Options → Language → Türkçe</strong> seçip yeşil tuşla onaylayın.</li>
+        <li>Parlaklık, ses ve bip ayarlarınızı yeniden yapın.</li>
+        <li>Bir DMR kanalında dinleme yapıp sesin temiz geldiğini doğrulayın. Ses bozuk ya da hiç yoksa 5. bölüme bakın.</li>
+        <li><strong>Sonraki güncellemeler</strong> daha kısadır: 5, 6 ve 7. adımlar yeterlidir; sürücü adımı tekrarlanmaz, ayarlar sıfırlanmaz.</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===================================================================== -->
+<section>
+  <h2>4 · Kullanım</h2>
+
+  <h3>Ana ekran</h3>
+  <div class="annotated">
+    <div class="screen">
+      <span class="num" style="top:5.5%">1</span>
+      <span class="num" style="top:17%">2</span>
+      <span class="num" style="top:36%">3</span>
+      <span class="num" style="top:53%">4</span>
+      <span class="num" style="top:64%">5</span>
+      <span class="num" style="top:80%">6</span>
+      <span class="num" style="top:95.5%">7</span>
+      <figure><img src="img/home_live.png" alt=""></figure>
+    </div>
+    <table>
+      <tr><td class="n"><span class="num">1</span></td><td><strong>Durum çubuğu.</strong> Mod (FM, DMR, TX), FM'de bant genişliği, DMR'de zaman dilimi (TS) ve renk kodu (CC), güç, pil yüzdesi.</td></tr>
+      <tr><td class="n"><span class="num">2</span></td><td><strong>Kanal adı.</strong></td></tr>
+      <tr><td class="n"><span class="num">3</span></td><td><strong>Alış frekansı.</strong> Gönderirken kırmızıya döner ve gönderme frekansını gösterir.</td></tr>
+      <tr><td class="n"><span class="num">4</span></td><td><strong>Bölge ve kanal sırası</strong>, sağda gönderme frekansı.</td></tr>
+      <tr><td class="n"><span class="num">5</span></td><td><strong>Mod bilgisi.</strong> FM'de ton ve susturucu, DMR'de konuşma grubu.</td></tr>
+      <tr><td class="n"><span class="num">6</span></td><td><strong>Sinyal.</strong> S değeri, kalite, dBm ve çubuk; altında gürültü, pil voltajı, sıcaklık.</td></tr>
+      <tr><td class="n"><span class="num">7</span></td><td><strong>Sinyal geçmişi.</strong> Yeni değer sağdan girer. Frekans değişince sıfırlanır.</td></tr>
+    </table>
+  </div>
+
+  <h3>Sinyal değerlerini okumak</h3>
+  <table>
+    <tr><th>Gösterge</th><th>Anlamı</th></tr>
+    <tr><td><strong>S3</strong>, <strong>S9+10</strong></td><td>S-metre değeri. S9'un üstü desibel olarak eklenir ve kırmızı gösterilir.</td></tr>
+    <tr><td><strong>-114dBm</strong></td><td>Alınan sinyalin gücü. Sayı sıfıra yaklaştıkça sinyal güçlüdür (-70, -110'dan güçlüdür).</td></tr>
+    <tr><td><strong>Q 0%</strong> … <strong>100%</strong></td><td>Sinyal kalitesi. Boş kanalda %0'a yakın, temiz bir sinyalde %100. Güçlü ama parazitli bir sinyalde S yüksek, Q düşük görünür.</td></tr>
+    <tr><td><strong>G 64</strong></td><td>Alıcı çipinin ham gürültü değeri. Düşük olması iyidir. Susturucu bu değere göre açılır.</td></tr>
+    <tr><td><strong>7.2V</strong>, <strong>27°C</strong></td><td>Pil voltajı ve telsizin iç sıcaklığı.</td></tr>
+  </table>
+
+  <h3>DMR çağrısı ve gönderme</h3>
+  <div class="grid2">
+    <figure><img src="img/call.png" alt="" style="width:62mm"><figcaption>Çağrı alınırken: üstte konuşma grubu, ortada çağrı işareti, altında ad ve yer, sonra DMR kimliği. Çağrı, kanalınızın ayarlı olmadığı bir gruptan ya da zaman diliminden geliyorsa durum çubuğundaki TS/CC kırmızı olur.</figcaption></figure>
+    <figure><img src="img/tx.png" alt="" style="width:62mm"><figcaption>Gönderirken: kırmızı TX rozeti ve frekans. Zaman aşımı ayarlıysa kalan süre ve süre çubuğu görünür; FM'de çubuğun altında mikrofon seviyesi vardır.</figcaption></figure>
+  </div>
+
+  <h3>Menü ayarları</h3>
+  <p>Yeni seçenekler <strong>Menü → Seçenekler → Ekran Seç.</strong> altındadır. Değeri sol/sağ ok ile değiştirin. Telsizde satır adları yer darlığından kısaltılmış yazılır; aşağıda ne işe yaradıklarıyla anılmıştır.</p>
+  <div class="warn"><p><span class="tag">Kaydetmek için yeşil tuş.</span> Menüden kırmızı tuşla çıkarsanız yaptığınız değişiklik geri alınır.</p></div>
+  <table>
+    <tr><th>Ayar</th><th>Ne yapar</th></tr>
+    <tr><td><strong>Ana ekran:</strong> Yeni / Klasik</td><td>Yeni tasarım ile OpenGD77'nin özgün ekranı arasında geçiş. Listenin en sonundadır.</td></tr>
+    <tr><td><strong>Ses göstergesi</strong></td><td>Açıkken ses düğmesini çevirdiğinizde ekranda ses çubuğu belirir. Yeni kurulumda açık gelir.</td></tr>
+    <tr><td><strong>Başlıkta saat</strong></td><td>Açıksa durum çubuğunda saat görünür; yer kalmadığı için pil ikonu gizlenir, pil yüzdesi kalır.</td></tr>
+    <tr><td><strong>Ters görüntü</strong></td><td>Kapalı bırakın; koyu tema bu ayar kapalıyken doğru görünür.</td></tr>
+  </table>
+
+  <div class="grid3">
+    <figure><img src="img/menu_main.png" alt=""><figcaption>Dokuz satırlı menü (önizleme, İngilizce dilde)</figcaption></figure>
+    <figure><img src="img/volume.png" alt=""><figcaption>Ses göstergesi</figcaption></figure>
+    <figure><img src="img/last_heard.png" alt=""><figcaption>Son Duyulanlar: çağrı işareti, geçen süre, sinyal</figcaption></figure>
+  </div>
+
+  <h3>Spektrum ve şelale</h3>
+  <div class="grid2">
+    <div>
+      <ol>
+        <li>Kırmızı tuşla <strong>VFO moduna</strong> geçin.</li>
+        <li><strong># tuşuna uzun basın.</strong> Uzun bir bip duyulur ve tarama başlar.</li>
+        <li>Üstte anlık spektrum, altında zaman içinde akan şelale görünür. Sıcak renkler güçlü sinyaldir.</li>
+        <li>Adım aralığını değiştirmek için PTT'nin altındaki yan tuş basılıyken üstteki kanal düğmesini çevirin.</li>
+      </ol>
+      <p>Merkez frekans, o anda VFO'da yazılı olan frekanstır.</p>
+    </div>
+    <figure><img src="img/sweep.png" alt="" style="width:62mm"><figcaption>Örnek görüntü: iki sabit taşıyıcı ve frekansı kayan bir sinyal.</figcaption></figure>
+  </div>
+
+  <h3>Diğer ekranlar</h3>
+  <ul>
+    <li><strong>RSSI</strong> (Menü → RSSI): ibreli S-metre. Küçük işaret son tepe değerini gösterir.</li>
+    <li><strong>Son Duyulanlar</strong> (Menü → Son Duyulanlar): duyulan DMR istasyonları, ne kadar önce duyuldukları ve sinyal güçleri.</li>
+    <li><strong>Kapanış:</strong> düğmeyi kapattığınızda yaklaşık bir saniyelik "73" animasyonu oynar. Bu sırada düğmeyi geri açarsanız kapanma iptal olur.</li>
+  </ul>
+</section>
+
+<!-- ===================================================================== -->
+<section>
+  <h2>5 · Sorun giderme ve geri dönüş</h2>
+
+  <table>
+    <tr><th style="width:38%">Belirti</th><th>Ne yapmalı</th></tr>
+    <tr><td><code>radio.py</code> "No radio found" diyor</td><td>Telsiz açık ve normal modda olmalı (yükleme modunda değil). Kabloyu ve başka bir USB girişini deneyin. OpenGD77 CPS açıksa kapatın; bağlantı noktasını o tutuyor olabilir.</td></tr>
+    <tr><td><code>build.py</code> "arm-none-eabi-gcc not found" diyor</td><td>Arm GNU Toolchain kurulu değil ya da varsayılan klasörün dışına kurulmuş. Yeniden, varsayılan klasöre kurun.</td></tr>
+    <tr><td>Derleme, klasör yolundan şikâyet ediyor</td><td>Proje klasörünü Türkçe karakter ve boşluk içermeyen bir yola taşıyın (örnek: <code>C:\md390</code>).</td></tr>
+    <tr><td><code>make_image.py</code> "the backup has no AMBE codec" diyor</td><td>Telsizinizdeki OpenGD77 yalnızca FM olarak kurulmuş. Önce resmi OpenGD77'yi, resmi TYT yazılım dosyasıyla birlikte (DMR destekli) kurun, sonra yeniden yedek alın.</td></tr>
+    <tr><td><code>flash.py --list</code> "No DFU capable devices found" diyor</td><td>Telsiz yükleme modunda değil (ekran karanlık olmalı) ya da sürücü adımı yapılmamış. 6. adımı tekrarlayın; sürücü komutunu yönetici olarak çalıştırdığınızdan emin olun.</td></tr>
+    <tr><td>Windows "Bu cihaza bir sürücü yüklenemiyor (STTub30)" diyor</td><td>Eski ST sürücüsü yeni Windows'ta engelleniyor. <code>winusb_dfu_driver.py</code> bunu Windows'un kendi sürücüsüyle değiştirir.</td></tr>
+    <tr><td>Yüklemeden sonra ekran açılmıyor</td><td>Telsizi tuşlara basmadan açtığınızdan emin olun. Yine açılmıyorsa yükleme moduna alıp yeniden yükleyin ya da eski yazılıma dönün.</td></tr>
+    <tr><td>FM çalışıyor, DMR'de ses yok ya da bozuk</td><td>Ses kodeği yedekten doğru alınamamış. Eski yazılıma dönün, DMR'nin orada çalıştığını doğrulayın, yeni bir yedek alıp 5. adımdan devam edin.</td></tr>
+    <tr><td>Ses çubuğu görünmüyor</td><td>Ekran Seç. menüsünde ses göstergesini açın ve <strong>yeşil tuşla</strong> çıkın.</td></tr>
+    <tr><td>Renkler ters ya da soluk</td><td>Ekran Seç. menüsünde ters görüntüyü kapatın.</td></tr>
+  </table>
+
+  <h3>Eski yazılıma dönmek</h3>
+  <p>Kurulumun 5. adımında yedek klasörünüzde <code>restore_firmware.bin</code> oluşmuştu. Telsizi yükleme moduna alın (kurulum 6. adım) ve şunu çalıştırın:</p>
+  <pre>python tools/flash.py backup\<span class="c">&lt;tarih&gt;</span>\restore_firmware.bin</pre>
+  <p>Telsiz, yedek aldığınız andaki yazılımına döner. Ayarlar yine sıfırlanır; kanallar kalır.</p>
+
+  <div class="note">
+    <p><span class="tag">Yedek klasöründe neler var?</span> <code>mcu_rom.bin</code> (yazılım ve ses kodeği), <code>spi_flash.bin</code> (kanallar, kişiler, DMR kimlik veritabanı), <code>calibration.bin</code> ve <code>flash_security_registers.bin</code> (fabrika kalibrasyonu). Kalibrasyon her telsize özeldir; bu klasörü silmeyin.</p>
+  </div>
+
+  <h3 style="break-before:page;margin-top:0">Değişiklikleri bilgisayarda görmek (isteğe bağlı)</h3>
+  <p>Kaynak kodda değişiklik yapacaksanız, telsize yüklemeden ekranların nasıl görüneceğini bilgisayarda görebilirsiniz:</p>
+  <pre>pip install unicorn
+python sim/preview.py</pre>
+  <p>Görüntüler <code>sim\out</code> klasörüne yazılır. Telsiz bağlıyken gerçek ekranın görüntüsünü almak için: <code>python tools/radio.py screenshot</code></p>
+
+  <h3>Lisans</h3>
+  <p>Bu yazılım OpenGD77 projesine dayanır (Roger Clark VK3KYY, Daniel Caujolle-Bert F1RMB ve katkıda bulunanlar). OpenGD77 lisansı kaynak kodun değiştirilmesine ve paylaşılmasına izin verir, ancak <strong>ticari kullanımı yasaklar</strong>: yazılım satılamaz, yazılım yüklenmiş cihaz bu yazılım gerekçesiyle ücretlendirilemez. Kaynak dosyalardaki telif bildirimleri korunmalıdır. Lisansın tam metni proje klasöründeki <code>license.txt</code> dosyasındadır.</p>
+  <p>DMR ses kodeği (AMBE) bu projenin parçası değildir ve kaynak kodda bulunmaz; her kullanıcı kendi telsizindeki kopyayı kullanır.</p>
+
+  <p style="margin-top:8mm;color:var(--dim)">İyi görüşmeler, 73 · TA2TWC</p>
+</section>
+
+</body>
+</html>

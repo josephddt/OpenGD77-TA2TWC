@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>OpenMDUV390 TA2TWC Kurulum</title>
+<style>
+  @page {
+    size: A4;
+    margin: 15mm 16mm 17mm 16mm;
+    @bottom-left { content: "OpenMDUV390 TA2TWC · kurulum kılavuzu"; font: 8pt "Segoe UI", sans-serif; color: #7a8a90; }
+    @bottom-right { content: counter(page) " / " counter(pages); font: 8pt "Segoe UI", sans-serif; color: #7a8a90; }
+  }
+  @page :first { @bottom-left { content: ""; } @bottom-right { content: ""; } }
+
+  :root {
+    --ink: #16232a;
+    --dim: #55666e;
+    --line: #d5dee2;
+    --accent: #007c91;
+    --accent-soft: #e6f4f7;
+    --warn: #b45309;
+    --warn-soft: #fdf3e3;
+    --danger: #b3261e;
+    --danger-soft: #fbeceb;
+    --code-bg: #0c1d2a;
+    --code-ink: #e8f6fa;
+  }
+
+  * { box-sizing: border-box; }
+  html { font: 10pt/1.45 "Segoe UI", "Helvetica Neue", Arial, sans-serif; color: var(--ink); }
+  body { margin: 0; }
+
+  h1 { font-size: 27pt; line-height: 1.12; margin: 0 0 4mm; letter-spacing: -0.02em; }
+  h2 { font-size: 16pt; line-height: 1.2; margin: 0 0 4mm; padding-bottom: 2mm; border-bottom: 0.6mm solid var(--accent); break-after: avoid; }
+  h3 { font-size: 11.5pt; margin: 4.5mm 0 2mm; break-after: avoid; }
+  p { margin: 0 0 3mm; }
+  ul, ol { margin: 0 0 3mm; padding-left: 5.5mm; }
+  li { margin-bottom: 1.2mm; }
+  strong { font-weight: 600; }
+  a { color: var(--accent); text-decoration: none; }
+
+  section { break-before: page; }
+  section.cover { break-before: auto; }
+
+  code { font: 9.2pt Consolas, "Cascadia Mono", monospace; background: #eef3f5; padding: 0.3mm 1.2mm; border-radius: 1mm; }
+  pre { font: 9.2pt/1.45 Consolas, "Cascadia Mono", monospace; background: var(--code-bg); color: var(--code-ink); padding: 2.2mm 4mm; border-radius: 1.5mm; margin: 0 0 3mm; white-space: pre-wrap; break-inside: avoid; }
+  pre .c { color: #7fa6b5; }
+
+  .note, .warn, .danger { border-left: 1.2mm solid var(--accent); background: var(--accent-soft); padding: 2.5mm 4mm; border-radius: 0 1.5mm 1.5mm 0; margin: 0 0 4mm; break-inside: avoid; }
+  .warn { border-color: var(--warn); background: var(--warn-soft); }
+  .danger { border-color: var(--danger); background: var(--danger-soft); }
+  .note p:last-child, .warn p:last-child, .danger p:last-child { margin-bottom: 0; }
+  .tag { font-weight: 600; }
+
+  /* Cover */
+  .cover { display: flex; flex-direction: column; min-height: 262mm; }
+  .cover .kicker { font-size: 10pt; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 5mm; }
+  .cover .lead { font-size: 13pt; line-height: 1.45; color: var(--dim); max-width: 150mm; margin-bottom: 9mm; }
+  .cover .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; margin-bottom: 9mm; }
+  .cover .meta { margin-top: auto; border-top: 0.3mm solid var(--line); padding-top: 4mm; color: var(--dim); font-size: 9.5pt; display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 8mm; }
+  .cover .meta b { color: var(--ink); font-weight: 600; }
+
+  figure { margin: 0; break-inside: avoid; }
+  figure img { display: block; width: 100%; border-radius: 1.5mm; border: 0.3mm solid #0c1d2a; image-rendering: pixelated; }
+  figcaption { font-size: 8.5pt; color: var(--dim); margin-top: 1.5mm; line-height: 1.35; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm 8mm; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; }
+  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm; }
+  .grid4 figure, .grid3 figure { max-width: 40mm; }
+
+  table { width: 100%; border-collapse: collapse; margin: 0 0 4mm; font-size: 9.8pt; break-inside: avoid; }
+  th, td { text-align: left; vertical-align: top; padding: 1.3mm 2.5mm; border-bottom: 0.25mm solid var(--line); }
+  th { font-weight: 600; color: var(--dim); font-size: 8.8pt; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 0.4mm solid var(--ink); }
+  td.n { width: 8mm; }
+
+  .num { display: inline-flex; align-items: center; justify-content: center; width: 5.4mm; height: 5.4mm; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 600; font-size: 8.5pt; }
+
+  /* Steps */
+  .step { display: grid; grid-template-columns: 11mm 1fr; gap: 0 3mm; margin-bottom: 2mm; }
+  .step > .no { width: 9mm; height: 9mm; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 600; font-size: 12pt; display: flex; align-items: center; justify-content: center; }
+  .step h3 { margin: 1mm 0 2mm; }
+  .step > div > :last-child { margin-bottom: 0; }
+
+  /* Annotated screen */
+  .annotated { display: grid; grid-template-columns: 78mm 1fr; gap: 7mm; align-items: start; break-inside: avoid; margin-bottom: 5mm; }
+  .annotated .screen { position: relative; padding-left: 8mm; }
+  .annotated .screen .num { position: absolute; left: 0; transform: translateY(-50%); }
+  .annotated table { margin: 0; }
+
+  .checklist { list-style: none; padding-left: 0; }
+  .checklist li { padding-left: 7mm; position: relative; }
+  .checklist li::before { content: ""; position: absolute; left: 0; top: 1.1mm; width: 3.6mm; height: 3.6mm; border: 0.4mm solid var(--dim); border-radius: 0.7mm; }
+</style>
+</head>
+<body>
+
+<!-- ===================================================================== -->
+<section class="cover">
+  <div class="kicker">TYT MD-UV380 / MD-UV390 · OpenGD77 tabanlı</div>
+  <h1>OpenMDUV390 TA2TWC<br>kurulum kılavuzu</h1>
+  <p class="lead">OpenGD77 üzerine yeni ana ekran, sinyal göstergeleri, spektrum ve şelale, açılış ve kapanış animasyonları eklenmiş yazılımı, OpenGD77 CPS ile kendi telsizinize nasıl kuracağınızı adım adım anlatır. Komut satırı ya da programlama bilgisi gerekmez.</p>
+
+  <div class="shots">
+    <figure><img src="img/boot_060.png" alt=""><figcaption>Açılış animasyonu: telsize yazdığınız çağrı işareti ve DMR kimliği</figcaption></figure>
+    <figure><img src="img/home_live.png" alt=""><figcaption>Yeni ana ekran (telsizden alınmış gerçek görüntü)</figcaption></figure>
+    <figure><img src="img/call.png" alt=""><figcaption>DMR çağrısı alınırken</figcaption></figure>
+  </div>
+
+  <h3>İçindekiler</h3>
+  <table>
+    <tr><td class="n">1</td><td>Paketin içindekiler ve yenilikler</td><td class="n">2</td></tr>
+    <tr><td class="n">2</td><td>Başlamadan önce: gerekenler ve riskler</td><td class="n">3</td></tr>
+    <tr><td class="n">3</td><td>Kurulum</td><td class="n">4</td></tr>
+    <tr><td class="n">4</td><td>Kurulumdan sonra: çağrı işareti, dil, renkler, uydular</td><td class="n">5</td></tr>
+    <tr><td class="n">5</td><td>Kullanım</td><td class="n">6</td></tr>
+    <tr><td class="n">6</td><td>Sorun giderme, geri dönüş ve lisans</td><td class="n">7</td></tr>
+  </table>
+
+  <div class="meta">
+    <div><b>Hazırlayan:</b> TA2TWC</div>
+    <div><b>Taban:</b> OpenGD77 R20260131 (MDUV380)</div>
+    <div><b>Denendiği cihazlar:</b> TYT MD-UV390, 5 W (üç telsiz)</div>
+    <div><b>Lisans:</b> ticari olmayan kullanım (bkz. son sayfa)</div>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<section>
+  <h2>1 · Paketin içindekiler ve yenilikler</h2>
+
+  <table>
+    <tr><th style="width:44%">Dosya</th><th>Ne işe yarar</th></tr>
+    <tr><td><code>OpenMDUV380_TA2TWC_5W.zip</code></td><td>Standart (5 W) MD-UV380 / MD-UV390 için yazılım. <strong>Çoğu kullanıcı bunu kullanır.</strong></td></tr>
+    <tr><td><code>OpenMDUV380_TA2TWC_10W_PLUS.zip</code></td><td>Yalnızca <strong>MD-UV390 Plus 10 W</strong> için. Bu model elimizde olmadığı için denenmedi.</td></tr>
+    <tr><td><code>OpenMDUV390_TA2TWC_Kurulum_Kilavuzu.pdf</code></td><td>Bu kılavuz.</td></tr>
+    <tr><td><code>LISANS_license.txt</code></td><td>OpenGD77 lisansı. Paketi paylaşırken bu dosyayı da verin.</td></tr>
+    <tr><td><code>SHA256SUMS.txt</code></td><td>Dosyaların bozulmadan geldiğini denetlemek için özet değerleri.</td></tr>
+  </table>
+  <p>Zip dosyalarını <strong>açmayın</strong>; CPS onları olduğu gibi kullanır. İçlerinde yazılım ve OpenGD77'nin dil dosyaları vardır.</p>
+
+  <div class="note"><p><span class="tag">DMR ses kodeği pakette yok.</span> DMR için gereken AMBE ses kodeği lisanslı bir yazılımdır ve paylaşılamaz. Resmi OpenGD77 dağıtımında olduğu gibi, CPS kurulum sırasında kodeği sizin indirdiğiniz resmi TYT yazılım dosyasından alır (bkz. 2. bölüm).</p></div>
+
+  <h3>Yenilikler</h3>
+  <p>Yazılımın radyo tarafı (alma, gönderme, DMR, kanal ve kişi yapısı) OpenGD77 ile aynıdır. Değişen, ekranda gördükleriniz ve birkaç kullanım kolaylığıdır.</p>
+  <table>
+    <tr><th style="width:30%">Yenilik</th><th>Ne işe yarar</th></tr>
+    <tr><td><strong>Yeni ana ekran</strong></td><td>Büyük frekans, kanal adı, bölge, gönderme frekansı ve teknik değerler tek ekranda. İstenirse klasik görünüme dönülür.</td></tr>
+    <tr><td><strong>Sinyal göstergeleri</strong></td><td>S değeri, dBm, sinyal kalitesi (Q %), gürültü, pil voltajı, sıcaklık ve altta kayan sinyal geçmişi.</td></tr>
+    <tr><td><strong>DMR çağrı ekranı</strong></td><td>Çağrı işareti büyük yazıyla; ad, şehir, DMR kimliği ve konuşma grubu ayrı satırlarda.</td></tr>
+    <tr><td><strong>Gönderme ekranı</strong></td><td>Kırmızı TX rozeti, kalan süre çubuğu, FM'de mikrofon seviyesi.</td></tr>
+    <tr><td><strong>Spektrum ve şelale</strong></td><td>VFO taramasında renkli spektrum ve zaman içinde akan şelale.</td></tr>
+    <tr><td><strong>İbreli S-metre</strong></td><td>RSSI ekranında tepe değeri işaretli analog gösterge.</td></tr>
+    <tr><td><strong>Açılış ve kapanış</strong></td><td>Telsize kayıtlı çağrı işaretinizin ve DMR kimliğinizin göründüğü animasyonlar.</td></tr>
+    <tr><td><strong>Pil yüzdesi, 9 satırlı menü, koyu tema</strong></td><td>Durum çubuğunda yüzde; menülerde daha çok satır; koyu zemine göre ayarlanmış renkler.</td></tr>
+  </table>
+
+  <div class="grid4">
+    <figure><img src="img/tx.png" alt=""><figcaption>Gönderme</figcaption></figure>
+    <figure><img src="img/sweep.png" alt=""><figcaption>Spektrum ve şelale</figcaption></figure>
+    <figure><img src="img/rssi.png" alt=""><figcaption>İbreli S-metre</figcaption></figure>
+    <figure><img src="img/shutdown_015.png" alt=""><figcaption>Kapanış</figcaption></figure>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<section>
+  <h2>2 · Başlamadan önce</h2>
+
+  <div class="danger">
+    <p><span class="tag">Sorumluluk size aittir.</span> Bu resmi olmayan, gönüllü bir yazılımdır ve hiçbir garanti verilmez. Yükleme öncesinde yedek alın. Telsizi yalnızca lisansınızın izin verdiği frekans ve güçlerde kullanmak sizin sorumluluğunuzdadır.</p>
+  </div>
+
+  <h3>Uygun cihazlar</h3>
+  <ul>
+    <li><strong>TYT MD-UV380 ve MD-UV390</strong> (çift bant). Retevis RT-3S aynı cihazdır. Tek bantlı <strong>MD-380 / MD-390 uygun değildir.</strong></li>
+    <li>Telsizde fabrika (TYT) yazılımı da olabilir, OpenGD77 de. İki durumda da kurulum aynıdır.</li>
+    <li>MD-UV390 Plus 10 W için ayrı dosya vardır ama denenmemiştir. GPS'li modeller de denenmemiştir.</li>
+  </ul>
+
+  <h3>Gerekenler</h3>
+  <table>
+    <tr><th style="width:30%">Ne</th><th>Açıklama</th></tr>
+    <tr><td>Bilgisayar</td><td>Windows 10 veya 11.</td></tr>
+    <tr><td>Programlama kablosu</td><td>Telsizin USB programlama kablosu.</td></tr>
+    <tr><td>OpenGD77 CPS</td><td>OpenGD77'nin programlama yazılımı, <strong>güncel sürüm</strong>. opengd77.com adresinden ya da OpenGD77 forumundaki sabit duyurudan indirilir.</td></tr>
+    <tr><td>Resmi yazılım dosyası (donör)</td><td>DMR ses kodeğinin alındığı resmi TYT yazılım dosyası. CPS, istediği dosyanın adını yükleyici penceresinde gösterir ve dosyayı içeriğinden doğrular; yanlış dosyayı kabul etmez. Hangi dosya olduğu ve nereden indirileceği OpenGD77 kullanım kılavuzunda anlatılır: <a href="https://github.com/LibreDMR/OpenGD77_UserGuide">github.com/LibreDMR/OpenGD77_UserGuide</a>. <strong>Adında "GPS" geçen dosyayı seçmeyin</strong>, GPS'li telsizde de.</td></tr>
+    <tr><td>Yükleme modu sürücüsü</td><td>Telsiz yükleme modundayken Aygıt Yöneticisi'nde <strong>"STM Device in DFU Mode"</strong> görünmelidir. Görünmüyorsa opengd77.com'daki DFU sürücüsünü kurun.</td></tr>
+  </table>
+
+  <h3>Bilmeniz gerekenler</h3>
+  <ul>
+    <li><strong>Kanallar kalır, ayarlar sıfırlanır.</strong> OpenGD77'den geçiyorsanız kanallar, bölgeler ve kişiler yerinde kalır; telsiz ayarları (dil, parlaklık, ses seçenekleri) bir kez varsayılana döner.</li>
+    <li><strong>Kalibrasyona dokunulmaz.</strong> Yükleyici yalnızca yazılımı değiştirir; telsizin fabrika kalibrasyonu ve önyükleyicisi (bootloader) yerinde kalır.</li>
+    <li><strong>Geri dönüş mümkündür.</strong> Yükleme yarıda kalsa bile telsiz yeniden yükleme moduna alınıp yazılabilir. Resmi OpenGD77'ye ya da fabrika yazılımına dönüş 6. bölümde anlatılır.</li>
+  </ul>
+
+  <h3>Hazırlık listesi</h3>
+  <ul class="checklist">
+    <li>Telsizin pili dolu.</li>
+    <li>OpenGD77 CPS kurulu.</li>
+    <li>Resmi yazılım dosyası (donör) indirildi ve zip'ten çıkarıldı.</li>
+    <li>Bu paketteki zip dosyası (5 W ya da 10 W) bilgisayarda hazır.</li>
+    <li>Telsizdeki kanalların yedeği alındı (sonraki sayfa, 1. adım).</li>
+  </ul>
+</section>
+
+<!-- ===================================================================== -->
+<section>
+  <h2>3 · Kurulum</h2>
+
+  <div class="step">
+    <div class="no">1</div>
+    <div>
+      <h3>Yedek alın</h3>
+      <ul>
+        <li><strong>Telsizde fabrika yazılımı varsa:</strong> TYT'nin kendi CPS programıyla kanal hafızasını okuyun ve dosyaya kaydedin.</li>
+        <li><strong>Telsizde OpenGD77 varsa:</strong> OpenGD77 CPS'de <strong>Extras → OpenGD77 Support</strong> penceresinde <strong>Backup Flash</strong>, <strong>Backup MCU ROM</strong> ve varsa kalibrasyon yedeğini alın; kanal hafızasını <code>.g77</code> dosyası olarak kaydedin. Yedekleri güvenli bir yere kopyalayın.</li>
+      </ul>
+      
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="no">2</div>
+    <div>
+      <h3>Telsizi yükleme moduna alın</h3>
+      <ol>
+        <li>USB kablosunu takın, telsizi kapatın.</li>
+        <li><strong>PTT tuşu ile hemen üstündeki yan tuşu (SK1)</strong> birlikte basılı tutun.</li>
+        <li>Tuşlar basılıyken telsizi açın, sonra bırakın. Ekran karanlık kalır, LED kırmızı-yeşil yanıp söner. Bu normaldir.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="no">3</div>
+    <div>
+      <h3>CPS'de yükleyiciyi açın</h3>
+      <ol>
+        <li>OpenGD77 CPS'de radyo türü olarak <strong>MD-UV380 / RT-3S</strong> seçeneğini seçin.</li>
+        <li><strong>Extras → Firmware loader</strong> menüsünü açın ve listeden <strong>MD-UV380</strong> modelini seçin.</li>
+        <li><strong>İlk seferde:</strong> <strong>"Select official firmware (donor) file"</strong> düğmesiyle indirdiğiniz resmi yazılım dosyasını gösterin. CPS bu dosyayı hatırlar; sonraki güncellemelerde tekrar istenmez.</li>
+      </ol>
+      <div class="note"><p><span class="tag">Telsizde zaten OpenGD77 varsa da donör gerekir.</span> Yükleyici eski yazılımı kodeğiyle birlikte siler ve kodeği her seferinde donörden ekler. OpenGD77'yi daha önce <strong>bu bilgisayardaki CPS ile</strong> DMR destekli kurduysanız donör zaten seçilidir. Emin değilseniz seçin: donörsüz yüklemede <strong>yalnızca FM</strong> çalışır.</p></div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="no">4</div>
+    <div>
+      <h3>Yükleyin</h3>
+      <p><strong>"Select Open firmware file and update"</strong> düğmesine basın ve bu paketteki zip dosyasını seçin:</p>
+      <ul>
+        <li>Standart telsiz: <code>OpenMDUV380_TA2TWC_5W.zip</code></li>
+        <li>Plus 10 W: <code>OpenMDUV380_TA2TWC_10W_PLUS.zip</code></li>
+      </ul>
+      <p>Dil seçimi sorulursa <strong>Turkish</strong> seçin. Yükleme kendiliğinden başlar ve yaklaşık yarım dakika sürer.</p>
+      <div class="warn"><p><span class="tag">Yükleme sırasında</span> kabloyu çıkarmayın, telsizi kapatmayın. Yarıda kalırsa 2. adımdan yeniden başlayın.</p></div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="no">5</div>
+    <div>
+      <h3>İlk açılış</h3>
+      <ul>
+        <li>Telsiz kendiliğinden yeniden başlar. Başlamazsa kapatıp <strong>tuşlara basmadan</strong> açın.</li>
+        <li>Açılış animasyonundan sonra <strong>"Settings Updated"</strong> kutusu çıkabilir: ayarların sıfırlandığını bildirir. <strong>Yeşil tuşa</strong> basın.</li>
+        <li>Bir DMR kanalını dinleyip sesin temiz geldiğini doğrulayın.</li>
+        <li><strong>Fabrika yazılımından geldiyseniz</strong> telsizde OpenGD77 kanal hafızası henüz yoktur: CPS'de bir kanal dosyası açıp ya da hazırlayıp telsize yazın (CPS'de <strong>Write</strong>).</li>
+        <li><strong>Sonraki güncellemelerde</strong> yalnızca 2, 3 ve 4. adımlar yapılır.</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===================================================================== -->
+<section>
+  <h2>4 · Kurulumdan sonra</h2>
+
+  <h3>Çağrı işareti ve DMR kimliği</h3>
+  <p>Açılış ve kapanış animasyonları, telsize kayıtlı adı ve DMR kimliğini gösterir; yazılımda kimseye ait bir çağrı işareti yoktur. OpenGD77 CPS'de genel ayarlarda <strong>Radio Name</strong> alanına çağrı işaretinizi (en çok 8 karakter, Türkçe karakter kullanmayın), <strong>Radio ID</strong> alanına DMR kimliğinizi yazıp telsize yazın (<strong>Write</strong>). Ad boşsa animasyonda "OpenGD77" görünür.</p>
+  <div class="warn"><p><span class="tag">Animasyon görünmüyorsa:</span> CPS'de açılış ekranı <strong>resim</strong> olarak ayarlanmış ve telsize bir açılış resmi yüklenmiştir; bu durumda animasyon yerine resim gösterilir. Açılış ekranını <strong>metin</strong> olarak ayarlayıp telsize yazın. Kapanış animasyonu her durumda oynar.</p></div>
+
+  <h3>Türkçe menü</h3>
+  <p><strong>Menu → Options → Language → Türkçe</strong> seçip yeşil tuşla onaylayın. Bu seçenek, kurulumda Türkçe dil dosyası seçildiyse görünür. Eklenen ekranların yazıları Türkçe ve İngilizce hazırdır.</p>
+
+  <h3>Renkleri değiştirmek</h3>
+  <p>Her yazı rengi telsizin kendi menüsünden değiştirilebilir: <strong>Menü → Seçenekler → Tema Seçici → Tema Seç.</strong> Listeden bir öğe seçin (örneğin <strong>RX Frekansı</strong>, <strong>Kişi Bilgisi</strong>), ardından Kırmızı / Yeşil / Mavi değerlerini ayarlayıp yeşil tuşla kaydedin. Renkler telsizin hafızasına yazılır; yazılım güncellemesinde korunur.</p>
+  <div class="note"><p><span class="tag">İpucu:</span> Bazı telsizlerin ekran camı mavimsidir ve yeşil yazılar turkuaz gibi görünür. Bu durumda yeşil öğelerin <strong>Mavi değerini 0</strong> yapın (örnek: Kırmızı 0, Yeşil 200, Mavi 0). Sarıya kaymadan, camın arkasında yeşil görünür.</p></div>
+
+  <h3>Uydu listesi ve saat</h3>
+  <p>Uydu ekranının çalışması için güncel yörünge bilgileri (TLE) ve doğru saat gerekir. OpenGD77 CPS'de <strong>Extras → OpenGD77 Support</strong> penceresindeki uydu bilgisi yükleme düğmesi ikisini birlikte yapar. Konumunuzu <strong>Menü → Seçenekler → Genel Seçenekler</strong> altından girin. Yörünge bilgileri birkaç haftada eskir; arada bir yenileyin.</p>
+
+  <h3>Ana ekran seçenekleri</h3>
+  <p><strong>Menü → Seçenekler → Ekran Seç.</strong> altında: yeni / klasik ana ekran, ses göstergesi (ses düğmesini çevirince çıkan çubuk), başlıkta saat. Değeri sol/sağ okla değiştirin.</p>
+  <div class="warn"><p><span class="tag">Kaydetmek için yeşil tuş.</span> Menüden kırmızı tuşla çıkarsanız değişiklik geri alınır.</p></div>
+</section>
+
+<!-- ===================================================================== -->
+<section>
+  <h2>5 · Kullanım</h2>
+
+  <h3>Ana ekran</h3>
+  <div class="annotated">
+    <div class="screen">
+      <span class="num" style="top:5.5%">1</span>
+      <span class="num" style="top:17%">2</span>
+      <span class="num" style="top:36%">3</span>
+      <span class="num" style="top:53%">4</span>
+      <span class="num" style="top:64%">5</span>
+      <span class="num" style="top:80%">6</span>
+      <span class="num" style="top:95.5%">7</span>
+      <figure><img src="img/home_live.png" alt=""></figure>
+    </div>
+    <table>
+      <tr><td class="n"><span class="num">1</span></td><td><strong>Durum çubuğu.</strong> Mod (FM, DMR, TX), FM'de bant genişliği, DMR'de zaman dilimi (TS) ve renk kodu (CC), güç, pil yüzdesi.</td></tr>
+      <tr><td class="n"><span class="num">2</span></td><td><strong>Kanal adı.</strong></td></tr>
+      <tr><td class="n"><span class="num">3</span></td><td><strong>Alış frekansı.</strong> Gönderirken kırmızıya döner.</td></tr>
+      <tr><td class="n"><span class="num">4</span></td><td><strong>Bölge ve kanal sırası</strong>, sağda gönderme frekansı.</td></tr>
+      <tr><td class="n"><span class="num">5</span></td><td><strong>Mod bilgisi.</strong> FM'de ton ve susturucu, DMR'de konuşma grubu.</td></tr>
+      <tr><td class="n"><span class="num">6</span></td><td><strong>Sinyal.</strong> S değeri, kalite, dBm ve çubuk; altında gürültü, pil voltajı, sıcaklık.</td></tr>
+      <tr><td class="n"><span class="num">7</span></td><td><strong>Sinyal geçmişi.</strong> Yeni değer sağdan girer.</td></tr>
+    </table>
+  </div>
+
+  <h3>Sinyal değerlerini okumak</h3>
+  <table>
+    <tr><th>Gösterge</th><th>Anlamı</th></tr>
+    <tr><td><strong>S3</strong>, <strong>S9+10</strong></td><td>S-metre değeri. S9'un üstü desibel olarak eklenir ve kırmızı gösterilir.</td></tr>
+    <tr><td><strong>-114dBm</strong></td><td>Alınan sinyalin gücü. Sıfıra yaklaştıkça güçlüdür (-70, -110'dan güçlüdür).</td></tr>
+    <tr><td><strong>Q 0%</strong> … <strong>100%</strong></td><td>Sinyal kalitesi. Boş kanalda %0'a yakın, temiz sinyalde %100.</td></tr>
+    <tr><td><strong>G 64</strong></td><td>Alıcının ham gürültü değeri. Düşük olması iyidir.</td></tr>
+    <tr><td><strong>7.2V</strong>, <strong>27°C</strong></td><td>Pil voltajı ve telsizin iç sıcaklığı.</td></tr>
+  </table>
+
+  <h3>Spektrum ve şelale</h3>
+  <ol>
+    <li>Kırmızı tuşla <strong>VFO moduna</strong> geçin, <strong># tuşuna uzun basın</strong>. Tarama başlar.</li>
+    <li>Üstte anlık spektrum, altında şelale görünür; sıcak renkler güçlü sinyaldir. Merkez, VFO'daki frekanstır.</li>
+    <li>Adım aralığını değiştirmek için PTT'nin altındaki yan tuş basılıyken üstteki kanal düğmesini çevirin.</li>
+  </ol>
+
+  <h3>Diğer ekranlar</h3>
+  <ul>
+    <li><strong>RSSI</strong> (Menü → RSSI): ibreli S-metre; küçük işaret son tepe değeridir.</li>
+    <li><strong>Son Duyulanlar</strong>: duyulan DMR istasyonları, ne kadar önce duyuldukları ve sinyal güçleri.</li>
+    <li><strong>Kapanış:</strong> düğmeyi kapatınca yaklaşık bir saniyelik "73" animasyonu oynar; bu sırada geri açarsanız kapanma iptal olur.</li>
+  </ul>
+  <p style="color:var(--dim);font-size:9pt;margin-top:3mm">Kapaktaki ana ekran telsizden alınmıştır; diğer görüntüler aynı yazılımın bilgisayarda çizdiği önizlemelerdir ve örnek veriler içerir.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section>
+  <h2>6 · Sorun giderme, geri dönüş ve lisans</h2>
+
+  <table>
+    <tr><th style="width:38%">Belirti</th><th>Ne yapmalı</th></tr>
+    <tr><td>CPS telsizi yükleme modunda görmüyor</td><td>Ekran karanlık, LED kırmızı-yeşil yanıp sönmeli. Aygıt Yöneticisi'nde "STM Device in DFU Mode" yoksa DFU sürücüsünü kurun; başka bir USB girişi deneyin.</td></tr>
+    <tr><td>CPS donör dosyayı kabul etmiyor</td><td>Dosya CPS'nin istediği dosya değil. Penceredeki dosya adına ve OpenGD77 kılavuzuna bakın; "GPS" geçen dosyayı seçmeyin.</td></tr>
+    <tr><td>FM çalışıyor, DMR'de ses yok</td><td>Kurulum donör dosyasız (yalnızca FM) yapılmış; telsizde önceden OpenGD77 olsa bile böyle olur. 3. adımda donör dosyayı seçip yeniden yükleyin.</td></tr>
+    <tr><td>Yüklemeden sonra ekran açılmıyor</td><td>Telsizi tuşlara basmadan açın. Yine açılmazsa yükleme moduna alıp yeniden yükleyin.</td></tr>
+    <tr><td>Açılışta "OpenGD77" yazıyor</td><td>Telsizde çağrı işareti (Radio Name) kayıtlı değil. 4. bölüme bakın.</td></tr>
+    <tr><td>Renkler ters ya da soluk</td><td>Ekran Seç. menüsünde ters görüntüyü kapatın.</td></tr>
+  </table>
+
+  <h3>Eski yazılıma dönmek</h3>
+  <ul>
+    <li><strong>Resmi OpenGD77'ye:</strong> opengd77.com'dan <code>OpenMDUV380.zip</code> dosyasını indirin ve 3. bölümdeki adımları aynen o dosyayla yapın.</li>
+    <li><strong>Fabrika (TYT) yazılımına:</strong> telsizi yükleme moduna alın ve TYT'nin kendi yazılım güncelleme programıyla resmi yazılımı yükleyin. Sonra TYT CPS ile 1. adımda aldığınız kanal yedeğini telsize yazın.</li>
+  </ul>
+
+  <h3>Paylaşırken</h3>
+  <ul>
+    <li>Paketi bu kılavuz ve <code>LISANS_license.txt</code> ile birlikte, <strong>ücretsiz</strong> paylaşın.</li>
+    <li>Telsizden okunmuş yedekleri ya da DMR ses kodeği içeren yazılım dosyalarını paylaşmayın: kodek lisanslıdır, yedekler kişisel bilgi ve kalibrasyon içerir.</li>
+    <li>Dosyaların değişmediğini <code>SHA256SUMS.txt</code> ile denetleyebilirsiniz (PowerShell: <code>Get-FileHash dosya.zip</code>).</li>
+  </ul>
+
+  <h3>Lisans</h3>
+  <p>Bu yazılım OpenGD77 projesine dayanır (Roger Clark VK3KYY, Daniel Caujolle-Bert F1RMB ve katkıda bulunanlar). OpenGD77 lisansı değiştirmeye ve paylaşmaya izin verir, ancak <strong>ticari kullanımı yasaklar</strong>: yazılım satılamaz, yazılım yüklenmiş cihaz bu yazılım gerekçesiyle ücretlendirilemez. Lisansın tam metni pakettedir.</p>
+  <p>Copyright (C) 2019-2024 OpenGD77 firmware developers. Eklenen ekranlar: Copyright (C) 2026 TA2TWC. Bu yazılım "olduğu gibi" verilir; hiçbir garanti yoktur.</p>
+
+  <p style="margin-top:8mm;color:var(--dim)">İyi görüşmeler, 73 · TA2TWC</p>
+</section>
+
+</body>
+</html>

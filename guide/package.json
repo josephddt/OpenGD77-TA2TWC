@@ -1,0 +1,20 @@
+{
+  "name": "ta2twc-md-uv390-guide",
+  "version": "1.0.0",
+  "private": true,
+  "description": "User guide video of the TA2TWC MD-UV390 firmware",
+  "scripts": {
+    "assets": "python make_assets.py && node make_sfx.mjs",
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Guide out/TA2TWC_MD-UV390_kilavuz.mp4 --codec h264 --crf 17 --overwrite"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.535",
+    "@remotion/google-fonts": "^4.0.535",
+    "@types/react": "^19.3.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "remotion": "^4.0.535",
+    "typescript": "^7.0.2"
+  }
+}
