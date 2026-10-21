@@ -326,6 +326,9 @@ def fwLastHeard(f, a):
 	return s
 
 
+ENGLISH_CAPTIONS = ['Boot animation', 'Boot: ready', 'Home screen, DMR (zone and TX frequency)', 'Home screen, FM, receiving',
+		'DMR call', 'Transmitting', 'Analog S-meter (RSSI)', 'Spectrum and waterfall (VFO, long #)', 'Last heard', 'Shutdown']
+
 SCREENS = [
 	('1_acilis', 'Açılış animasyonu', lambda f, a: fwBoot(f, a, 700)),
 	('2_acilis_son', 'Açılış: hazır', lambda f, a: fwBoot(f, a, 1600)),
@@ -346,12 +349,14 @@ def main():
 	parser.add_argument('--callsign', default='TA2TWC')
 	parser.add_argument('--dmr-id', default='2867656')
 	parser.add_argument('--scale', type=int, default=4)
+	parser.add_argument('--english', action='store_true', help='English captions, overview written as 0_overview.png')
 	args = parser.parse_args()
 	os.makedirs(args.out, exist_ok=True)
 	fonts = loadFonts()
 
 	images = []
-	for name, caption, draw in SCREENS:
+	for index, (name, caption, draw) in enumerate(SCREENS):
+		caption = ENGLISH_CAPTIONS[index] if args.english else caption
 		img = draw(fonts, args).image(args.scale)
 		img.save(os.path.join(args.out, name + '.png'))
 		images.append((caption, img))
@@ -367,14 +372,14 @@ def main():
 		title = ImageFont.truetype('segoeuib.ttf', 24)
 	except OSError:
 		font = title = ImageFont.load_default()
-	d.text((pad, 12), 'Radioddity GD-77 · yeni ekranlar (128×64, siyah-beyaz) · %s' % args.callsign, fill=(230, 236, 240), font=title)
+	d.text((pad, 12), ('Radioddity GD-77 · new screens (128×64, monochrome) · %s' if args.english else 'Radioddity GD-77 · yeni ekranlar (128×64, siyah-beyaz) · %s') % args.callsign, fill=(230, 236, 240), font=title)
 	for i, (caption, img) in enumerate(images):
 		x = pad + (i % cols) * (cw + pad)
 		y = 52 + (i // cols) * (ch + pad + labelH)
 		d.text((x, y), caption, fill=(200, 210, 216), font=font)
 		d.rectangle([x - 6, y + labelH - 6, x + cw + 5, y + labelH + ch + 5], fill=LCD_BG, outline=(90, 100, 96))
 		sheet.paste(img, (x, y + labelH))
-	sheet.save(os.path.join(args.out, '0_genel_bakis.png'))
+	sheet.save(os.path.join(args.out, ('0_overview.png' if args.english else '0_genel_bakis.png')))
 	print('Written: %s (%d screens)' % (args.out, len(images)))
 
 
